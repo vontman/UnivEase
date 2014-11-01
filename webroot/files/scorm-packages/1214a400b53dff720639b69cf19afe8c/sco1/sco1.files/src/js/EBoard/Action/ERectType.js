@@ -1,1 +1,0 @@
-define("ERectType",["Point","Timer","CCompileOption"],function(c,b,a){ERectType={LineBrightValue:2,RectBrightValue:3,LineValue:5,RectValue:6,EllipseBrightValue:7,EllipseValue:8,LineBright:2,RectBright:3,Line:5,Rect:6,EllipseBright:7,Ellipse:8};return ERectType});

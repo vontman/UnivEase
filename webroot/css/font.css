@@ -1,8 +1,0 @@
- @font-face {
- font-family: 'GESSTwo';
- src: url('fonts/GE_SS_Two_Medium.otf') format('opentype');
-/* src: url('font/museo700-regular-webfont.eot?#iefix') format('embedded-opentype'),  url('font/museo700-regular-webfont.woff') format('woff'),  url('font/museo700-regular-webfont.ttf') format('truetype'),  url('font/museo700-regular-webfont.svg#Museo700') format('svg');*/
- font-weight: normal;
- font-style: normal;
-}
-

@@ -1,1 +1,0 @@
-define("CStopTypeFromStart",["CStopType"],function(a){function b(e,d,c){a.call(this,e*1000);this.bMouseOrKey=d||false;this.timer=null}b.prototype=new a();b.prototype.CanContinueWithMouse=function(){return false};b.prototype.CanContinueWithTime=function(){return false};b.prototype.timerHandler=function(c){c.stop();main.Continue()};return b});

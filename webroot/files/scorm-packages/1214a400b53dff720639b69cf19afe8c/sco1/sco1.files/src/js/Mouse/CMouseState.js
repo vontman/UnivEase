@@ -1,1 +1,0 @@
-define("CMouseState",["CAssertUtil"],function(b){function a(){}a.prototype={OnMouseMove:function(d,c){b.Abstract()},OnMouseDown:function(d,c){b.Abstract();return null},OnMouseUp:function(d,c){b.Abstract();return null},OnMouseClick:function(d,c){b.Abstract()},SlideStart:function(){b.Abstract()}};return a});

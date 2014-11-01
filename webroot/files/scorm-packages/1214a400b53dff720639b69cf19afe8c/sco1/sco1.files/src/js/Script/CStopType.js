@@ -1,1 +1,0 @@
-define("CStopType",function(){function a(b){this.nTime=b||0}a.prototype={CanContinueWithMouse:function(){return true},CanContinueWithTime:function(){return false}};return a});

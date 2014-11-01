@@ -1,1 +1,0 @@
-define("CEffect",function(){function a(){this.Code=""}a.prototype={GetID:function(){return -1},GetDeleteTime:function(){return 0},IsTransparent:function(){return false},Parsing:function(c){var b=0;if(c.charAt(0)=="E"){this.Code="E"}else{this.Code=c.substr(0,2)}return b},Apply:function(b){return b}};return a});

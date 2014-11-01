@@ -1,1 +1,0 @@
-define("CStopTypeKeyOrMouse",["CStopType"],function(a){function b(){a.call(this)}b.prototype=new a();return b});

@@ -1,1 +1,0 @@
-define("CStopTypeInfiniteLoop",["CStopType"],function(a){function b(){a.call(this)}b.prototype=new a();b.prototype.CanContinueWithMouse=function(){return false};return b});

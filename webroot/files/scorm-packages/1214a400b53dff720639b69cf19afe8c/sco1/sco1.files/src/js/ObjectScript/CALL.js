@@ -1,1 +1,0 @@
-define("CALL",["CScript"],function(a){function b(c){this.script=c}b.prototype=new a();b.prototype.Run=function(c){c=c||false;this.script.Run(c)};return b});

@@ -1,1 +1,0 @@
-define("Error",function(){function a(b){this.message=b}a.prototype={message:null,toString:function(){return this.message}};return a});

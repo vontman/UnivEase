@@ -1,1 +1,0 @@
-define("CMouseEventUtil",["Point"],function(a){CMouseEventUtil={GetPointLocal:function(b){if(b.target.parentElement.id=="imageCanvas"){return new a(b.target.offsetLeft+b.layerX,b.target.offsetTop+b.layerY)}return new a(b.target.parentElement.offsetLeft+b.layerX,b.target.parentElement.offsetTop+b.layerY)}};return CMouseEventUtil});

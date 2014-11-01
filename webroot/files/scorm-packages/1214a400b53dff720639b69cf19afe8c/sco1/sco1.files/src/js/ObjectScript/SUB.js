@@ -1,1 +1,0 @@
-define("SUB",["CScript"],function(b){function a(c){}a.prototype=new b();a.prototype.Run=function(c){c=c||false};return a});

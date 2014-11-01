@@ -1,1 +1,0 @@
-define("CEBoardActionElectronicBoard",["CEBoardAction"],function(a){function b(e,c,d,f){a.call(this,e,c);this.uColor=d;this.iLineWidth=f}b.prototype=new a();return b});

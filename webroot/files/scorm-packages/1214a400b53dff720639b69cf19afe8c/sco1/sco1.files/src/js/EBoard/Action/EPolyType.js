@@ -1,1 +1,0 @@
-define("EPolyType",["Point","Timer","CCompileOption"],function(c,b,a){EPolyType={PolylineBrightValue:1,PolylineValue:4,PolylineBright:1,Polyline:4};return EPolyType});

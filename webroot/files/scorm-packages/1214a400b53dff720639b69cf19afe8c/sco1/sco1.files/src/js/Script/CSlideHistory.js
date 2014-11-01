@@ -1,1 +1,0 @@
-define("CSlideHistory",function(){function a(b){}a.prototype={arrayIndexSlide:[],Push:function(b){this.arrayIndexSlide.push(b)},Pop:function(){this.arrayIndexSlide.pop();return Number(this.arrayIndexSlide.pop())}};return a});

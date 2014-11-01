@@ -1,1 +1,0 @@
-define("MyEventDispatcher",function(){function a(){this.AnimationStatus="";this.ButtonStatus=false;this.singleton=null}MyEventDispatcher={getInstance:function(){this.singleton=this.singleton||new a();return this.singleton}};return MyEventDispatcher});

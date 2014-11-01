@@ -1,1 +1,0 @@
-define("TextFormat",function(){function a(){}a.prototype={align:"left",blockIndent:0,bold:false,bullet:0,color:"000000",font:"Times New Roman",indent:0,italic:false,kerning:false,leading:null,leftMargin:0,letterSpacing:0,rightMargin:0,size:12,tabStops:[],target:"",underline:false,url:""};return a});

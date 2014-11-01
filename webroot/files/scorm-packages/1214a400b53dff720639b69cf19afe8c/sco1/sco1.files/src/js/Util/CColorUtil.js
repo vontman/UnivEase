@@ -1,1 +1,0 @@
-define("CColorUtil",function(){CColorUtil={padLeft:function(a,d,b){while(a.length<d){a=b+a}return a},RGBColor:function(a){if(a==NaN){return a}return"#"+this.padLeft(a.toString(16),6,"0")}};return CColorUtil});

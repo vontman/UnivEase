@@ -1,1 +1,0 @@
-define("EWINDOW",["CScript"],function(b){function a(d,e,f,c){this.iInTime=f||-1;this.iOutTime=c||Number.MAX_VALUE}a.prototype=new b();a.prototype.Run=function(c){c=c||false};return a});

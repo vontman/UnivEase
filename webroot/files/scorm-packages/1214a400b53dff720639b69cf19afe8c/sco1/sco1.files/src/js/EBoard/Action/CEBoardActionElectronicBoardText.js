@@ -1,1 +1,0 @@
-define("CEBoardActionElectronicBoardText",["CEBoardActionElectronicBoard"],function(b){function a(g,d,f,h,e,c,i){b.call(this,g,d,f,h);this.sText=e;this.iFontSize=c;this.sFontFace=i}a.prototype=new b();a.prototype.Act=function(d,c){};return a});
