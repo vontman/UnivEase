@@ -1,0 +1,102 @@
+[10-Jan-2013 11:47:58 UTC] PHP Warning:  include(cake/bootstrap.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/weyoufac/public_html/webroot/index.php on line 80
+[10-Jan-2013 11:47:58 UTC] PHP Warning:  include(cake/bootstrap.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/weyoufac/public_html/webroot/index.php on line 80
+[10-Jan-2013 11:47:58 UTC] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'cake/bootstrap.php' for inclusion (include_path='F:\xampp\htdocs:/home/weyoufac/public_html/:.:/usr/lib/php:/usr/local/lib/php') in /home/weyoufac/public_html/webroot/index.php on line 80
+[10-Jan-2013 11:47:58 UTC] PHP Fatal error:  CakePHP core could not be found.  Check the value of CAKE_CORE_INCLUDE_PATH in APP/webroot/index.php.  It should point to the directory containing your /cake core directory and your /vendors root directory. in /home/weyoufac/public_html/webroot/index.php on line 81
+[10-Jan-2013 19:43:24 UTC] PHP Parse error:  syntax error, unexpected $end, expecting ',' or ';' in /home/weyoufac/public_html/views/pages/home.ctp on line 190
+[02-Jul-2013 16:51:52 America/New_York] PHP Fatal error:  Call to a member function find() on a non-object in /home/almoodle/public_html/controllers/users_controller.php on line 128
+[02-Jul-2013 16:52:18 America/New_York] PHP Fatal error:  Call to a member function find() on a non-object in /home/almoodle/public_html/controllers/users_controller.php on line 128
+[02-Jul-2013 16:52:25 America/New_York] PHP Fatal error:  Call to a member function find() on a non-object in /home/almoodle/public_html/controllers/users_controller.php on line 128
+[04-Jul-2013 15:51:21 America/New_York] PHP Fatal error:  Call to a member function find() on a non-object in /home/almoodle/public_html/controllers/users_controller.php on line 128
+[09-Jul-2013 05:48:10 America/New_York] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/extensions/no-debug-non-zts-20090626/suhosin.so' - /usr/lib/php/extensions/no-debug-non-zts-20090626/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[09-Jul-2013 05:48:10 America/New_York] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/extensions/no-debug-non-zts-20090626/xcache.so' - /usr/lib/php/extensions/no-debug-non-zts-20090626/xcache.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[09-Jul-2013 05:48:10 America/New_York] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/extensions/no-debug-non-zts-20090626/ixed.5.3.lin' - /usr/lib/php/extensions/no-debug-non-zts-20090626/ixed.5.3.lin: cannot open shared object file: No such file or directory in Unknown on line 0
+[09-Jul-2013 05:48:10 America/New_York] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/extensions/no-debug-non-zts-20090626/imagick.so' - /usr/lib/php/extensions/no-debug-non-zts-20090626/imagick.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[09-Jul-2013 07:50:28 America/New_York] PHP Fatal error:  Call to a member function find() on a non-object in /home/almoodle/public_html/controllers/users_controller.php on line 134
+[09-Jul-2013 07:50:33 America/New_York] PHP Fatal error:  Call to a member function find() on a non-object in /home/almoodle/public_html/controllers/users_controller.php on line 134
+[11-Jul-2013 16:54:05 America/New_York] PHP Fatal error:  Call to a member function find() on a non-object in /home/almoodle/public_html/controllers/users_controller.php on line 126
+[11-Jul-2013 16:54:13 America/New_York] PHP Fatal error:  Call to a member function find() on a non-object in /home/almoodle/public_html/controllers/users_controller.php on line 126
+[11-Jul-2013 16:54:19 America/New_York] PHP Fatal error:  Call to a member function find() on a non-object in /home/almoodle/public_html/controllers/users_controller.php on line 126
+[15-Jul-2013 04:40:11 America/New_York] PHP Fatal error:  Call to a member function deleteAll() on a non-object in /home/almoodle/public_html/controllers/courses_controller.php on line 83
+[26-Jul-2013 13:56:20 America/New_York] PHP Fatal error:  Class 'SCORMParser' not found in /home/almoodle/public_html/views/lessons/player.ctp on line 4
+[30-Jul-2013 14:41:08 America/New_York] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Could not parse file /imsmanifest.xml' in /home/almoodle/public_html/vendors/scormparser.php:15
+Stack trace:
+#0 /home/almoodle/public_html/views/lessons/player.ctp(4): SCORMParser->__construct('/home/almoodle/...')
+#1 /home/almoodle/public_html/cake/libs/view/view.php(738): include('/home/almoodle/...')
+#2 /home/almoodle/public_html/cake/libs/view/view.php(431): View->_render('/home/almoodle/...', Array)
+#3 /home/almoodle/public_html/cake/libs/controller/controller.php(909): View->render(NULL, NULL, NULL)
+#4 /home/almoodle/public_html/cake/dispatcher.php(207): Controller->render()
+#5 /home/almoodle/public_html/cake/dispatcher.php(171): Dispatcher->_invoke(Object(LessonsController), Array)
+#6 /home/almoodle/public_html/webroot/index.php(86): Dispatcher->dispatch()
+#7 {main}
+  thrown in /home/almoodle/public_html/vendors/scormparser.php on line 15
+[30-Jul-2013 14:41:29 America/New_York] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Could not parse file /imsmanifest.xml' in /home/almoodle/public_html/vendors/scormparser.php:15
+Stack trace:
+#0 /home/almoodle/public_html/views/lessons/player.ctp(4): SCORMParser->__construct('/home/almoodle/...')
+#1 /home/almoodle/public_html/cake/libs/view/view.php(738): include('/home/almoodle/...')
+#2 /home/almoodle/public_html/cake/libs/view/view.php(431): View->_render('/home/almoodle/...', Array)
+#3 /home/almoodle/public_html/cake/libs/controller/controller.php(909): View->render(NULL, NULL, NULL)
+#4 /home/almoodle/public_html/cake/dispatcher.php(207): Controller->render()
+#5 /home/almoodle/public_html/cake/dispatcher.php(171): Dispatcher->_invoke(Object(LessonsController), Array)
+#6 /home/almoodle/public_html/webroot/index.php(86): Dispatcher->dispatch()
+#7 {main}
+  thrown in /home/almoodle/public_html/vendors/scormparser.php on line 15
+[30-Jul-2013 14:42:02 America/New_York] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Could not parse file /imsmanifest.xml' in /home/almoodle/public_html/vendors/scormparser.php:15
+Stack trace:
+#0 /home/almoodle/public_html/views/lessons/player.ctp(4): SCORMParser->__construct('/home/almoodle/...')
+#1 /home/almoodle/public_html/cake/libs/view/view.php(738): include('/home/almoodle/...')
+#2 /home/almoodle/public_html/cake/libs/view/view.php(431): View->_render('/home/almoodle/...', Array)
+#3 /home/almoodle/public_html/cake/libs/controller/controller.php(909): View->render(NULL, NULL, NULL)
+#4 /home/almoodle/public_html/cake/dispatcher.php(207): Controller->render()
+#5 /home/almoodle/public_html/cake/dispatcher.php(171): Dispatcher->_invoke(Object(LessonsController), Array)
+#6 /home/almoodle/public_html/webroot/index.php(86): Dispatcher->dispatch()
+#7 {main}
+  thrown in /home/almoodle/public_html/vendors/scormparser.php on line 15
+[30-Jul-2013 14:42:10 America/New_York] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Could not parse file /imsmanifest.xml' in /home/almoodle/public_html/vendors/scormparser.php:15
+Stack trace:
+#0 /home/almoodle/public_html/views/lessons/player.ctp(4): SCORMParser->__construct('/home/almoodle/...')
+#1 /home/almoodle/public_html/cake/libs/view/view.php(738): include('/home/almoodle/...')
+#2 /home/almoodle/public_html/cake/libs/view/view.php(431): View->_render('/home/almoodle/...', Array)
+#3 /home/almoodle/public_html/cake/libs/controller/controller.php(909): View->render(NULL, NULL, NULL)
+#4 /home/almoodle/public_html/cake/dispatcher.php(207): Controller->render()
+#5 /home/almoodle/public_html/cake/dispatcher.php(171): Dispatcher->_invoke(Object(LessonsController), Array)
+#6 /home/almoodle/public_html/webroot/index.php(86): Dispatcher->dispatch()
+#7 {main}
+  thrown in /home/almoodle/public_html/vendors/scormparser.php on line 15
+[30-Jul-2013 19:45:31 America/New_York] PHP Warning:  ZipArchive::open() [<a href='ziparchive.open'>ziparchive.open</a>]: Empty string as source in /home/almoodle/public_html/webroot/scorm-upload.php on line 11
+[30-Jul-2013 19:45:31 America/New_York] PHP Warning:  ZipArchive::locateName() [<a href='ziparchive.locatename'>ziparchive.locatename</a>]: Invalid or unitialized Zip object in /home/almoodle/public_html/webroot/scorm-upload.php on line 12
+[31-Jul-2013 04:23:45 America/New_York] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Could not parse file /home/almoodle/public_html/webroot/data/11/scorm/imsmanifest.xml' in /home/almoodle/public_html/vendors/scormparser.php:15
+Stack trace:
+#0 /home/almoodle/public_html/views/lessons/player.ctp(4): SCORMParser->__construct('/home/almoodle/...')
+#1 /home/almoodle/public_html/cake/libs/view/view.php(738): include('/home/almoodle/...')
+#2 /home/almoodle/public_html/cake/libs/view/view.php(431): View->_render('/home/almoodle/...', Array)
+#3 /home/almoodle/public_html/cake/libs/controller/controller.php(909): View->render(NULL, NULL, NULL)
+#4 /home/almoodle/public_html/cake/dispatcher.php(207): Controller->render()
+#5 /home/almoodle/public_html/cake/dispatcher.php(171): Dispatcher->_invoke(Object(LessonsController), Array)
+#6 /home/almoodle/public_html/webroot/index.php(86): Dispatcher->dispatch()
+#7 {main}
+  thrown in /home/almoodle/public_html/vendors/scormparser.php on line 15
+[05-Aug-2013 17:23:09 America/New_York] PHP Fatal error:  Class 'User' not found in /home/almoodle/public_html/cake/libs/class_registry.php on line 142
+[05-Aug-2013 17:23:18 America/New_York] PHP Fatal error:  Class 'User' not found in /home/almoodle/public_html/cake/libs/class_registry.php on line 142
+[07-Aug-2013 05:57:41 America/New_York] PHP Parse error:  syntax error, unexpected $end, expecting ')' in /home/almoodle/public_html/models/behaviors/image.php on line 82
+[07-Aug-2013 21:24:52 America/New_York] PHP Parse error:  syntax error, unexpected $end, expecting '(' in /home/almoodle/public_html/controllers/users_controller.php on line 79
+[18-Aug-2013 17:40:57 America/New_York] PHP Parse error:  syntax error, unexpected $end in /home/almoodle/public_html/app_controller.php on line 93
+[18-Aug-2013 18:54:36 America/New_York] PHP Parse error:  syntax error, unexpected T_ENCAPSED_AND_WHITESPACE, expecting ')' in /home/almoodle/public_html/controllers/users_controller.php on line 413
+[18-Sep-2013 01:22:54 Africa/Cairo] PHP Fatal error:  Call to undefined method ExamsController::get_course() in /home/eaet/public_html/controllers/exams_controller.php on line 285
+[17-Sep-2013 19:29:19 America/New_York] PHP Fatal error:  Class 'User' not found in /home/eaet/public_html/cake/libs/class_registry.php on line 142
+[17-Sep-2013 19:36:01 America/New_York] PHP Parse error:  syntax error, unexpected $end, expecting ']' in /home/eaet/public_html/controllers/exams_controller.php on line 387
+[17-Sep-2013 19:42:17 America/New_York] PHP Parse error:  syntax error, unexpected $end, expecting ']' in /home/eaet/public_html/controllers/questions_controller.php on line 71
+[18-Sep-2013 11:07:59 Africa/Cairo] PHP Fatal error:  Call to a member function find() on a non-object in /home/eaet/public_html/controllers/exams_controller.php on line 118
+[18-Sep-2013 11:08:05 Africa/Cairo] PHP Fatal error:  Call to a member function find() on a non-object in /home/eaet/public_html/controllers/exams_controller.php on line 118
+[25-Sep-2013 20:09:03 America/New_York] PHP Warning:  ZipArchive::open() [<a href='ziparchive.open'>ziparchive.open</a>]: Empty string as source in /home/eaet/public_html/webroot/scorm-upload.php on line 11
+[25-Sep-2013 20:09:03 America/New_York] PHP Warning:  ZipArchive::locateName() [<a href='ziparchive.locatename'>ziparchive.locatename</a>]: Invalid or unitialized Zip object in /home/eaet/public_html/webroot/scorm-upload.php on line 12
+[26-Sep-2013 20:35:57 America/New_York] PHP Warning:  fclose() expects parameter 1 to be resource, null given in /home/eaet/public_html/webroot/vupload.php on line 191
+[26-Sep-2013 20:35:57 America/New_York] PHP Warning:  fclose() expects parameter 1 to be resource, null given in /home/eaet/public_html/webroot/vupload.php on line 192
+[26-Sep-2013 20:35:57 America/New_York] PHP Warning:  fclose() expects parameter 1 to be resource, null given in /home/eaet/public_html/webroot/vupload.php on line 193
+[26-Sep-2013 20:56:24 America/New_York] PHP Warning:  fclose() expects parameter 1 to be resource, null given in /home/eaet/public_html/webroot/vupload.php on line 192
+[26-Sep-2013 20:56:24 America/New_York] PHP Warning:  fclose() expects parameter 1 to be resource, null given in /home/eaet/public_html/webroot/vupload.php on line 193
+[26-Sep-2013 20:56:24 America/New_York] PHP Warning:  fclose() expects parameter 1 to be resource, null given in /home/eaet/public_html/webroot/vupload.php on line 194
+[09-Nov-2013 12:33:28 America/Chicago] PHP Warning:  ZipArchive::locateName() [<a href='ziparchive.locatename'>ziparchive.locatename</a>]: Invalid or unitialized Zip object in /home/eaet/public_html/webroot/scorm-upload.php on line 12
+[10-Nov-2013 13:48:49 Africa/Cairo] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/eaet/public_html/cake/libs/file.php on line 400
+[10-Nov-2013 13:49:19 Africa/Cairo] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/eaet/public_html/cake/libs/file.php on line 411
+[06-Dec-2013 06:39:27 America/New_York] PHP Warning:  Module 'imagick' already loaded in Unknown on line 0
+[06-Dec-2013 06:39:28 America/New_York] PHP Warning:  Module 'imagick' already loaded in Unknown on line 0

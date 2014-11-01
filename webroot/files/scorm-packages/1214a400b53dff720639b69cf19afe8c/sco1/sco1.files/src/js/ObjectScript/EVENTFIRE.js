@@ -1,0 +1,1 @@
+define("EVENTFIRE",["CScript"],function(a){function b(c){this.arg=Array.prototype.slice.call(arguments,0)}b.prototype=new a();b.prototype.Run=function(c){c=c||false;if(_EventFire_){_EventFire_(this.arg)}};return b});

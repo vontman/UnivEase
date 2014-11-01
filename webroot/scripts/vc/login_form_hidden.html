@@ -1,0 +1,25 @@
+<html>
+<body>
+<center>
+Welcome to Live login
+<!-- BEGIN ELECTA LIVE LOGIN FORM -->
+<script language="javascript">
+function signin(AUserID, APassword) {
+var d = new Date();
+document.electalogin.timezone.value = d.getTimezoneOffset();
+if (AUserID == "" || APassword == "") { 
+window.alert ("Please Specify Your Username and Password") }
+return ( AUserID && APassword ? true : false);}
+</script>
+<form method="post" action="http://vc.ubel.org/verify.asp" id="electalogin" name="electalogin" LANGUAGE="javascript" onsubmit="return signin(this.UserID.value, this.Password.value)">
+<input type=hidden name="timezone">
+<table>
+<tr><td><input name="UserID" type=hidden id=UserID value="iqbalms@ubel.org"></td></tr>
+<tr><td><input type="hidden" type=hidden id=Password name="Password" value="!Au*BU"></td></tr>
+<tr><td><INPUT type="Submit" value="Click here to Login" id=btnLogin name=btnLogin></td></tr>
+</table>
+</form>
+<!-- END ELECTA LIVE LOGIN FORM -->
+</center>
+</body>
+</html>

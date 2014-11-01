@@ -1,0 +1,110 @@
+ .wrapper{
+      
+     
+min-height: 50px;
+width: 100%;
+overflow: hidden;
+padding: 5px;
+float: right;
+
+    }
+    .teacher-wrapper{
+        min-height: auto;
+
+    }
+    .student-wrapper{
+        min-height: auto;
+        float: left;
+        margin-top:9px;
+        
+
+    }
+    .teacher-image,.student-image{
+        float: right;
+        width: 10%;
+       
+    }
+    .teacher-image img,.student-image img{
+        width: 100%;
+        border-radius: 50%;
+        border: 1px solid rgba(97,146,137,0.5);
+        height: 100%;
+    }
+    .clear{
+        clear: both;
+    }
+    .teacher-post{
+        -webkit-box-shadow: 0px 0px 12px 3px rgba(97, 146, 137, 0.2);
+        -moz-box-shadow:    0px 0px 12px 3px rgba(97, 146, 137, 0.2);
+        box-shadow:         0px 0px 12px 3px rgba(97, 146, 137, 0.2);
+        background-color:rgba(248, 247, 247, 0.05);
+        left: 0;
+        width: 88%;
+        float:left
+      
+     }
+     .student-post{
+        -webkit-box-shadow: 0px 0px 12px 3px rgba(97, 146, 137, 0.2);
+        -moz-box-shadow:    0px 0px 12px 3px rgba(97, 146, 137, 0.2);
+        box-shadow:         0px 0px 12px 3px rgba(97, 146, 137, 0.2);
+        background-color: rgba(248, 247, 247, 0.05);
+        left: 0;
+        max-width: 88%;
+      
+     }
+     .teacher-post{
+     border-top-right-radius: 18px;
+border-bottom-left-radius: 11px;
+     }
+     .student-post{
+           border-top-left-radius: 8px;
+border-bottom-right-radius: 25px;
+     }
+     .student-post:hover{
+        -webkit-box-shadow: 3px 6px 10px 4px rgba(97,146,137,0.8);
+        -moz-box-shadow: 3px 6px 10px 4px rgba(97,146,137,0.8);
+        box-shadow: 3px 6px 10px 4px rgba(97,146,137,0.8);
+
+     }
+     .teacher-post h4,.student-post h4{
+         color:#619289;
+         height: 2px;
+         padding: 10px;
+
+     }
+     p.teacher-body,p.student-body{
+
+         padding: 10px;
+     }
+     .student-wrapper{
+         width: 85%;
+         position: relative;
+         left: 3%;
+         font-size: 88%;
+     }.student-body textarea{
+         width: 91%;
+         margin: 10px;
+         border:none;
+         min-height: 11%;
+         max-width: 92%;
+         max-height: 90%;
+         margin-bottom: 19px;
+         resize: none;
+     }
+     .student-body input{
+         margin: 10px;
+         border:none;
+         margin-bottom: 19px;
+         resize: none;
+     }
+     .student-body textarea:hover{
+         border:1px solid rgba(94, 131, 132, 0.35);
+     }.submit-reply{
+        background: rgba(68, 174, 176, 0.2);
+border-radius: 26%;
+width: auto;
+/* padding: 5px; */
+margin: 0 14px 7px 0;   
+     }
+    
+  

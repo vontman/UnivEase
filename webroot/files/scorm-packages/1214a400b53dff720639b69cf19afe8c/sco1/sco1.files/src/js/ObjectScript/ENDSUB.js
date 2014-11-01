@@ -1,0 +1,1 @@
+define("ENDSUB",["CScript"],function(a){function b(){}b.prototype=new a();b.prototype.Run=function(c){c=c||false};return b});

@@ -1,0 +1,190 @@
+/*
+
+fol styling exam and gradiant
+made by amr sobhy
+
+*/
+//color list
+
+ul.bg-color{
+    list-style: none;
+    display: inline;
+    width: 100px;
+    height: 100px;
+}
+.bg-color li{
+    display: inline-block;
+    width: 20px;
+    min-height: 20px;
+    padding: 1px;
+    direction: ltr;
+}
+.bg-color li:hover{
+cursor: pointer;
+}
+
+/////////////////////////////
+//title and time of exam
+.exam-title{
+  
+}
+.exam-title ul {
+   
+    
+    height: 40px;
+    alignment-baseline: central;
+    clear: both;
+    max-width: 80%; 
+    border-radius: 50px;
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 5px;
+    left: 10%;
+    position: relative;
+    
+}
+.exam-title li{
+    display: inline-block;
+    float:right;
+    clear: left;
+    
+    
+}
+.exam-title li h2{
+    padding-right:  10px;
+    border-bottom: 0px;
+    position: relative;
+    top: -16px;
+}
+.exam-title li #exam_time{
+    float: left;
+    clear: left;
+    padding: 5px;
+    
+}
+li.title-time{
+    float: left;
+}
+.poll-questions{
+    margin: 5px;
+}
+.question-title h4{
+    border-radius: 50px;
+    border: 1px;
+    padding-right: 2%;
+    padding-top: 1%;
+
+}
+.form-actions-exams{
+    
+padding: 19px 20px 20px;
+margin-top: 20px;
+margin-bottom: 20px;
+border-top: 1px solid #e5e5e5;
+padding: 5px;
+}
+
+
+.black{
+/* IE10 Consumer Preview */ 
+background-image: -ms-linear-gradient(top, #FFFFFF 0%, #5AEF24 300%);
+
+/* Mozilla Firefox */ 
+background-image: -moz-linear-gradient(top, #FFFFFF 0%, #5AEF24 300%);
+
+/* Opera */ 
+background-image: -o-linear-gradient(top, #FFFFFF 0%, #5AEF24 300%);
+
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(3, #5AEF24));
+
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #5AEF24 300%);
+
+/* W3C Markup, IE10 Release Preview */ 
+background-image: linear-gradient(to bottom, #FFFFFF 0%, #5AEF24 300%);
+
+}
+
+
+
+.orange{
+    border: 1px solid rgba(247,222,163,0.3); 
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    
+/* IE10 Consumer Preview */ 
+background-image: -ms-linear-gradient(top, #FFFFFF 0%, #EF8318 300%);
+
+/* Mozilla Firefox */ 
+background-image: -moz-linear-gradient(top, #FFFFFF 0%, #EF8318 300%);
+
+/* Opera */ 
+background-image: -o-linear-gradient(top, #FFFFFF 0%, #EF8318 300%);
+
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(3, #EF8318));
+
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #EF8318 300%);
+
+/* W3C Markup, IE10 Release Preview */ 
+background-image: linear-gradient(to bottom, #FFFFFF 0%, #EF8318 300%);
+
+}
+
+.blue
+{
+    
+ 	 color:black;
+ border: 1px solid rgba(163,226,247,0.3); 
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+/* IE10 Consumer Preview */ 
+background-image: -ms-linear-gradient(top, #FFFDFC 0%, #33A0FF 300%);
+
+/* Mozilla Firefox */ 
+background-image: -moz-linear-gradient(top, #FFFDFC 0%, #33A0FF 300%);
+
+/* Opera */ 
+background-image: -o-linear-gradient(top, #FFFDFC 0%, #33A0FF 300%);
+
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFDFC), color-stop(3, #33A0FF));
+
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-linear-gradient(top, #FFFDFC 0%, #33A0FF 300%);
+
+/* W3C Markup, IE10 Release Preview */ 
+background-image: linear-gradient(to bottom, #FFFDFC 0%, #33A0FF 300%);
+}
+
+.green{
+     border: 1px solid rgba(172,247,163,0.3); 
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+/* IE10 Consumer Preview */ 
+background-image: -ms-linear-gradient(top, #FFFFFF 0%, #5AEF24 300%);
+
+/* Mozilla Firefox */ 
+background-image: -moz-linear-gradient(top, #FFFFFF 0%, #5AEF24 300%);
+
+/* Opera */ 
+background-image: -o-linear-gradient(top, #FFFFFF 0%, #5AEF24 300%);
+
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(3, #5AEF24));
+
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #5AEF24 300%);
+
+/* W3C Markup, IE10 Release Preview */ 
+background-image: linear-gradient(to bottom, #FFFFFF 0%, #5AEF24 300%);
+
+}
+////////////////////////////////
+
+
+
+
+
+

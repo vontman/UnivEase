@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<title></title>
+		<script type="text/javascript" src="../APIWrapper.js"></script>
+		<script type="text/javascript">
+			var masteryScore = 80;
+			var scaledPassingScore = 0.80;
+		</script>
+		<script type="text/javascript" src="../html5scorm.js" charset="utf-8"></script>
+		<link type="text/css" rel="stylesheet" href="src/Viewer.css"/>        
+        <link type="text/css" rel="stylesheet" href="src/msgbox/msgbox.css"/>
+        <script type="text/javascript" src="src/lib/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="src/lib/require.js"></script>
+        <script type="text/javascript" src="src/lib/jquery.touchwipe.min.js"></script>        
+        <script type="text/javascript" src="src/msgbox/msgbox.js"></script>  
+        <script type="text/javascript" src="src/config.js"></script>
+        <script type="text/javascript" src="src/common.js"></script>
+	</head>
+	<body onBeforeUnload="doQuit()" onUnload="doQuit()">
+		<div class="loadingLayer"></div>
+		<!--[if !IE]><!--><span id="loadingImage" class="loading"></span><!--<![endif]-->
+		<div class="frameCover">
+			<div class="framePane">
+				<div id="slideBackground"></div>
+				<div class="controlCover" id="topBar">
+					<div id="titleBar"></div>
+				</div>
+				<div id="frameCanvas">
+					<div id="imageCanvas"></div>
+				</div>
+                <div class="controlCover" id="controls">
+					<div id="control-next" class="controlbar-button right"><a class="icon next-slide"></a></div>
+					<div id="control-previous" class="controlbar-button right"><a class="icon previous-slide"></a></div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+
+		$(window).load(function () {
+			require(["Main"], function (Main) {
+
+				$("#loadingImage").fadeOut();
+				$("div.loadingLayer").fadeOut();
+
+				main = new Main();
+				main.OnCreationComplete();
+
+				doInit();
+			});
+		});
+	</script>	
+	<script type="text/javascript">
+
+		var PageTracking = false;
+		var StreamingMediaURL = "";
+		var StreamingMediaRenameURL = ' ';
+
+		_EventFire_ = function (arg) {
+			// Add event code here
+		}
+
+	</script>
+    <script type="text/javascript" src="data.js" charset="utf-8"></script>
+</html>

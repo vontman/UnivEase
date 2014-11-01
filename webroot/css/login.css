@@ -1,0 +1,52 @@
+
+.login-bg {
+    background: url(images/intro1.jpg) no-repeat fixed center top / cover white; 
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+#login-wp { text-align: right; font-family: Tahoma, Geneva, sans-serif; font-size: 11px; }
+#login-wp .text input, #login-wp .textarea textarea, #login-wp .select select { width: 175px; }
+#login-wp .btn { font-family: Tahoma, Geneva, sans-serif;}
+input, button, select, textarea { text-align: right; padding-left: -20px; }
+#wrapper {
+    margin: 50px 20px; 
+    width: 400px 
+}
+a.hiddenanchor { display: none; }
+#toregister:target ~ #wrapper #register, #tologin:target ~ #wrapper #login,#toforget:target ~ #wrapper #forget{ z-index: 22; -webkit-animation-name: fadeInLeft; -moz-animation-name: fadeInLeft; -ms-animation-name: fadeInLeft; -o-animation-name: fadeInLeft; animation-name: fadeInLeft; -webkit-animation-delay: .1s; -moz-animation-delay: .1s; -o-animation-delay: .1s; -ms-animation-delay: .1s; animation-delay: .1s; }
+#toregister:target ~ #wrapper #login,#toregister:target ~ #wrapper #forget,#tologin:target ~ #wrapper #register,#tologin:target ~ #wrapper #forget ,#toforget:target ~ #wrapper #login,#toforget:target ~ #wrapper #register { -webkit-animation-name: fadeOutLeftBig; -moz-animation-name: fadeOutLeftBig; -ms-animation-name: fadeOutLeftBig; -o-animation-name: fadeOutLeftBig; animation-name: fadeOutLeftBig; }
+.animate { -webkit-animation-duration: 1s; -webkit-animation-timing-function: ease; -webkit-animation-fill-mode: both; -moz-animation-duration: 1s; -moz-animation-timing-function: ease; -moz-animation-fill-mode: both; -o-animation-duration: 1s; -o-animation-timing-function: ease; -o-animation-fill-mode: both; -ms-animation-duration: 1s; -ms-animation-timing-function: ease; -ms-animation-fill-mode: both; animation-duration: 1s; animation-timing-function: ease; animation-fill-mode: both; }
+#register, #forget, #login
+{
+    background-image: url('images/login_03.png'); 
+    background-size: 100% 100%; 
+    position: absolute; 
+    width: 720px;
+    /*padding-bottom: 300px;*/
+    padding-bottom: 100px;
+    padding-top: 260px;
+    margin-top: 60px;
+}
+#login { 
+    z-index: 22;
+   /* padding-top: 150px;*/
+   padding-top:70px;
+}
+#register { 
+       z-index: 21; 
+	   opacity: 0;
+	   height:850px;
+}
+#forget { z-index: 21;opacity: 0;padding-top: 100px;}
+#register h3,#forget h3 {
+	font-size: 20px;
+	/*margin: 30px 210px 15px; */
+    margin: -20px 210px 15px;
+	width: 200px;
+}
+#register div ,#forget div,#login div { padding-right: 135px; }
+#forget h3, #login h3{
+   /*margin: 70px 255px 15px;*/
+   margin: 50px 255px 15px;
+}
+.change-link{padding: 0px 160px;}

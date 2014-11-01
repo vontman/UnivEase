@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest identifier="daul-0aae6d04-ebe6-410c-a656-62cc30319d97" version="1.3"
+  xmlns="http://www.imsglobal.org/xsd/imscp_v1p1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_v1p3"
+  xmlns:imsss="http://www.imsglobal.org/xsd/imsss"
+  xmlns:adlseq="http://www.adlnet.org/xsd/adlseq_v1p3"
+  xmlns:adlnav="http://www.adlnet.org/xsd/adlnav_v1p3"
+  xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd
+                      http://www.adlnet.org/xsd/adlcp_v1p3 adlcp_v1p3.xsd
+                      http://www.imsglobal.org/xsd/imsss imsss_v1p0.xsd
+                      http://www.adlnet.org/xsd/adlseq_v1p3 adlseq_v1p3.xsd
+                      http://www.adlnet.org/xsd/adlnav_v1p3 adlnav_v1p3.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>CAM 1.3</schemaversion>
+  </metadata>
+  <organizations default="org-237c5515-daf3-49d2-aa3a-091129a88548">
+    <organization identifier="org-237c5515-daf3-49d2-aa3a-091129a88548">
+      <title>No Title1</title>
+      <item identifier="item-1bfd51b7-3fb1-42ca-948c-1c80c009137b" identifierref="res-d8f03d46-03d6-40ac-a997-c0b5b05078e6">
+        <title></title>
+        <imsss:sequencing>
+          <imsss:rollupRules rollupObjectiveSatisfied="true" rollupProgressCompletion="true" objectiveMeasureWeight="1.0"/>
+        </imsss:sequencing>
+        <adlnav:presentation>
+          <adlnav:navigationInterface>
+            <adlnav:hideLMSUI>continue</adlnav:hideLMSUI>
+          </adlnav:navigationInterface>
+        </adlnav:presentation>
+      </item>
+      <imsss:sequencing>
+        <imsss:controlMode choice="true" choiceExit="true" flow="true"/>
+        <imsss:rollupRules rollupObjectiveSatisfied="true" rollupProgressCompletion="true" objectiveMeasureWeight="1.0000">
+          <imsss:rollupRule childActivitySet="all">
+            <imsss:rollupConditions conditionCombination="any">
+              <imsss:rollupCondition condition="completed" operator="noOp"/>
+            </imsss:rollupConditions>
+            <imsss:rollupAction action="completed"/>
+          </imsss:rollupRule>
+          <imsss:rollupRule childActivitySet="any">
+            <imsss:rollupConditions conditionCombination="all">
+              <imsss:rollupCondition condition="completed" operator="not"/>
+            </imsss:rollupConditions>
+            <imsss:rollupAction action="incomplete"/>
+          </imsss:rollupRule>
+          <imsss:rollupRule childActivitySet="all">
+            <imsss:rollupConditions conditionCombination="any">
+              <imsss:rollupCondition condition="satisfied" operator="noOp"/>
+            </imsss:rollupConditions>
+            <imsss:rollupAction action="satisfied"/>
+          </imsss:rollupRule>
+          <imsss:rollupRule childActivitySet="any">
+            <imsss:rollupConditions conditionCombination="any">
+              <imsss:rollupCondition condition="satisfied" operator="not"/>
+            </imsss:rollupConditions>
+            <imsss:rollupAction action="notSatisfied"/>
+          </imsss:rollupRule>
+        </imsss:rollupRules>
+      </imsss:sequencing>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="res-d8f03d46-03d6-40ac-a997-c0b5b05078e6" type="webcontent" adlcp:scormType="sco" href="sco1/sco1.html">
+      <file href="sco1/APIWrapper.js"/>
+      <file href="sco1/html5scorm.js"/>
+      <file href="sco1/sco1.files/BuildVersion.js"/>
+      <file href="sco1/sco1.files/data.js"/>
+      <file href="sco1/sco1.files/doc/ch_ie10.png"/>
+      <file href="sco1/sco1.files/doc/ch_ie9.png"/>
+      <file href="sco1/sco1.files/doc/en_ie10.png"/>
+      <file href="sco1/sco1.files/doc/en_ie9.png"/>
+      <file href="sco1/sco1.files/doc/ie_document.html"/>
+      <file href="sco1/sco1.files/doc/ko_ie10.png"/>
+      <file href="sco1/sco1.files/doc/ko_ie9.png"/>
+      <file href="sco1/sco1.files/doc/maia.css"/>
+      <file href="sco1/sco1.files/html5lecture.html"/>
+      <file href="sco1/sco1.files/ioslaunch.html"/>
+      <file href="sco1/sco1.files/launch.html"/>
+      <file href="sco1/sco1.files/mobile/android_app.html"/>
+      <file href="sco1/sco1.files/mobile/android_market.png"/>
+      <file href="sco1/sco1.files/mobile/app_store.png"/>
+      <file href="sco1/sco1.files/mobile/icon-5-a-114.png"/>
+      <file href="sco1/sco1.files/mobile/ios_app.html"/>
+      <file href="sco1/sco1.files/mobile/launch.css"/>
+      <file href="sco1/sco1.files/mobile/linen_background.jpg"/>
+      <file href="sco1/sco1.files/Resources/base/_CheckBlue_.png"/>
+      <file href="sco1/sco1.files/Resources/base/_CheckRed_.png"/>
+      <file href="sco1/sco1.files/Resources/base/_Pause_.png"/>
+      <file href="sco1/sco1.files/Resources/base/_Pen_.png"/>
+      <file href="sco1/sco1.files/Resources/base/_Play_.png"/>
+      <file href="sco1/sco1.files/Resources/base/_soundoff_.png"/>
+      <file href="sco1/sco1.files/Resources/base/_soundon_.png"/>
+      <file href="sco1/sco1.files/Resources/base/_Stop_.png"/>
+      <file href="sco1/sco1.files/Resources/base/_watermark_.png"/>
+      <file href="sco1/sco1.files/Resources/Final!20Video!201!20(2)wmv.mp4"/>
+      <file href="sco1/sco1.files/Resources/Final!20Video!201!20(2)wmv.webm"/>
+      <file href="sco1/sco1.files/src/common.js"/>
+      <file href="sco1/sco1.files/src/config.js"/>
+      <file href="sco1/sco1.files/src/controls.png"/>
+      <file href="sco1/sco1.files/src/js/ActionScript/BitmapAsset.js"/>
+      <file href="sco1/sco1.files/src/js/ActionScript/Capabilities.js"/>
+      <file href="sco1/sco1.files/src/js/ActionScript/ContextMenu.js"/>
+      <file href="sco1/sco1.files/src/js/ActionScript/Event.js"/>
+      <file href="sco1/sco1.files/src/js/ActionScript/Graphics.js"/>
+      <file href="sco1/sco1.files/src/js/ActionScript/Point.js"/>
+      <file href="sco1/sco1.files/src/js/ActionScript/Rectangle.js"/>
+      <file href="sco1/sco1.files/src/js/ActionScript/Shape.js"/>
+      <file href="sco1/sco1.files/src/js/ActionScript/SoundAsset.js"/>
+      <file href="sco1/sco1.files/src/js/ActionScript/TextArea.js"/>
+      <file href="sco1/sco1.files/src/js/ActionScript/TextField.js"/>
+      <file href="sco1/sco1.files/src/js/ActionScript/TextFormat.js"/>
+      <file href="sco1/sco1.files/src/js/ActionScript/VideoAsset.js"/>
+      <file href="sco1/sco1.files/src/js/Bitmap/CBitmapInfo.js"/>
+      <file href="sco1/sco1.files/src/js/Bitmap/CBitmapManager.js"/>
+      <file href="sco1/sco1.files/src/js/Browser/CBrowserInfo.js"/>
+      <file href="sco1/sco1.files/src/js/Browser/CBrowserManager.js"/>
+      <file href="sco1/sco1.files/src/js/Browser/IFrame.js"/>
+      <file href="sco1/sco1.files/src/js/CFrontBuffer.js"/>
+      <file href="sco1/sco1.files/src/js/Common/CCompileOption.js"/>
+      <file href="sco1/sco1.files/src/js/Common/Error.js"/>
+      <file href="sco1/sco1.files/src/js/Control/CControlInfo.js"/>
+      <file href="sco1/sco1.files/src/js/Control/CControlManager.js"/>
+      <file href="sco1/sco1.files/src/js/CUIComponentFactory.js"/>
+      <file href="sco1/sco1.files/src/js/EBoard/Action/CEBoardAction.js"/>
+      <file href="sco1/sco1.files/src/js/EBoard/Action/CEBoardActionElectronicBoard.js"/>
+      <file href="sco1/sco1.files/src/js/EBoard/Action/CEBoardActionElectronicBoardClearScreen.js"/>
+      <file href="sco1/sco1.files/src/js/EBoard/Action/CEBoardActionElectronicBoardPoly.js"/>
+      <file href="sco1/sco1.files/src/js/EBoard/Action/CEBoardActionElectronicBoardRectangle.js"/>
+      <file href="sco1/sco1.files/src/js/EBoard/Action/CEBoardActionElectronicBoardText.js"/>
+      <file href="sco1/sco1.files/src/js/EBoard/Action/EPolyType.js"/>
+      <file href="sco1/sco1.files/src/js/EBoard/Action/ERectType.js"/>
+      <file href="sco1/sco1.files/src/js/EBoard/CEBoardButton.js"/>
+      <file href="sco1/sco1.files/src/js/EBoard/CEBoardControlPanel.js"/>
+      <file href="sco1/sco1.files/src/js/EBoard/CEBoardInfo.js"/>
+      <file href="sco1/sco1.files/src/js/EBoard/CEBoardManager.js"/>
+      <file href="sco1/sco1.files/src/js/EBoard/CEBoardProgress.js"/>
+      <file href="sco1/sco1.files/src/js/Effect/AnimationPackage.js"/>
+      <file href="sco1/sco1.files/src/js/Effect/CEffect.js"/>
+      <file href="sco1/sco1.files/src/js/Effect/CEffectAnimation.js"/>
+      <file href="sco1/sco1.files/src/js/Effect/MyEventDispatcher.js"/>
+      <file href="sco1/sco1.files/src/js/Effect/Transition.js"/>
+      <file href="sco1/sco1.files/src/js/Effect/TypeCollector.js"/>
+      <file href="sco1/sco1.files/src/js/Master/CMasterInfo.js"/>
+      <file href="sco1/sco1.files/src/js/Master/CMasterManager.js"/>
+      <file href="sco1/sco1.files/src/js/Mouse/CButtonInfo.js"/>
+      <file href="sco1/sco1.files/src/js/Mouse/CMouseManager.js"/>
+      <file href="sco1/sco1.files/src/js/Mouse/CMouseState.js"/>
+      <file href="sco1/sco1.files/src/js/Mouse/CMouseStateDrawing.js"/>
+      <file href="sco1/sco1.files/src/js/Mouse/CMouseStateHolder.js"/>
+      <file href="sco1/sco1.files/src/js/Mouse/CMouseStateNormal.js"/>
+      <file href="sco1/sco1.files/src/js/Mouse/EMouseState.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/ARC.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/ARROW.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/BOARD.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/BROWSER.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/BUTTONDRAW.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/BUTTONOFF.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/BUTTONON.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/BUTTONSET.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/CALL.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/CELLBOX.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/CIRCLE.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/CLS.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/CONTROLOFF.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/CScript.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/CURVE.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/DBOX.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/DSHAPE.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/EBOARD.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/EDIT.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/ENDSUB.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/EVENTFIRE.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/EWINDOW.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/FRAMEDRAW.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/GET.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/GOTO.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/HEXAD.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/LINE.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/MENUBUTTON.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/MESSAGEBOX.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/NAVIBUTTON.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/PAINT.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/PAUSE.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/POLYGON.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/PUT.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/QUIZRESULT.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/QUIZ_OBJECTIVE.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/QUIZ_SUBJECTIVE.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/SLIDEEND.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/SLIDENUMBER.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/SLIDESTART.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/SOUND.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/SUB.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/TIMEROFF.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/TIMERSET.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/VIDEO.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/VIDEOOPEN.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/WINDOW.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/XEDIT.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectScript/XVIEWER.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectSync/CObjectSyncInfo.js"/>
+      <file href="sco1/sco1.files/src/js/ObjectSync/CObjectSyncManager.js"/>
+      <file href="sco1/sco1.files/src/js/Quiz/CQuizInfo.js"/>
+      <file href="sco1/sco1.files/src/js/Quiz/CQuizManager.js"/>
+      <file href="sco1/sco1.files/src/js/Quiz/CQuiz_Info.js"/>
+      <file href="sco1/sco1.files/src/js/Quiz/CQuiz_Manager.js"/>
+      <file href="sco1/sco1.files/src/js/Script/CScriptManager.js"/>
+      <file href="sco1/sco1.files/src/js/Script/CSlideHistory.js"/>
+      <file href="sco1/sco1.files/src/js/Script/CStopType.js"/>
+      <file href="sco1/sco1.files/src/js/Script/CStopTypeAfterNSec.js"/>
+      <file href="sco1/sco1.files/src/js/Script/CStopTypeFromStart.js"/>
+      <file href="sco1/sco1.files/src/js/Script/CStopTypeInfiniteLoop.js"/>
+      <file href="sco1/sco1.files/src/js/Script/CStopTypeKeyOrMouse.js"/>
+      <file href="sco1/sco1.files/src/js/Script/CStopTypeQuizWait.js"/>
+      <file href="sco1/sco1.files/src/js/Util/CArrayUtil.js"/>
+      <file href="sco1/sco1.files/src/js/Util/CAssertUtil.js"/>
+      <file href="sco1/sco1.files/src/js/Util/CColorUtil.js"/>
+      <file href="sco1/sco1.files/src/js/Util/CCommonUtil.js"/>
+      <file href="sco1/sco1.files/src/js/Util/CEffectMacro.js"/>
+      <file href="sco1/sco1.files/src/js/Util/CMouseEventUtil.js"/>
+      <file href="sco1/sco1.files/src/js/Util/CTextFormatUtil.js"/>
+      <file href="sco1/sco1.files/src/js/Util/Timer.js"/>
+      <file href="sco1/sco1.files/src/js/Video/CAudioPlayer.js"/>
+      <file href="sco1/sco1.files/src/js/Video/CVideoInfo.js"/>
+      <file href="sco1/sco1.files/src/js/Video/CVideoManager.js"/>
+      <file href="sco1/sco1.files/src/js/Video/CVideoPlayer.js"/>
+      <file href="sco1/sco1.files/src/lib/jquery-1.7.2.min.js"/>
+      <file href="sco1/sco1.files/src/lib/jquery.touchwipe.min.js"/>
+      <file href="sco1/sco1.files/src/lib/require.js"/>
+      <file href="sco1/sco1.files/src/loading.png"/>
+      <file href="sco1/sco1.files/src/Main.js"/>
+      <file href="sco1/sco1.files/src/msgbox/images/background.png"/>
+      <file href="sco1/sco1.files/src/msgbox/images/icon_information.png"/>
+      <file href="sco1/sco1.files/src/msgbox/images/icon_question.png"/>
+      <file href="sco1/sco1.files/src/msgbox/images/icon_stop.png"/>
+      <file href="sco1/sco1.files/src/msgbox/images/icon_warnning.png"/>
+      <file href="sco1/sco1.files/src/msgbox/images/title.gif"/>
+      <file href="sco1/sco1.files/src/msgbox/msgbox.css"/>
+      <file href="sco1/sco1.files/src/msgbox/msgbox.js"/>
+      <file href="sco1/sco1.files/src/Viewer.css"/>
+      <file href="sco1/sco1.files/thumbnail.png"/>
+      <file href="sco1/sco1.files/unsupported.html"/>
+      <file href="sco1/sco1.files/~lmviewer.html"/>
+      <file href="sco1/sco1.html"/>
+    </resource>
+  </resources>
+ </manifest>

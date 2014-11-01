@@ -1,0 +1,1 @@
+define("CMouseStateDrawing",["EMouseState","CMouseEventUtil"],function(a,b){function c(){}c.prototype={uColor:0,mouseLastPoint:null,Color:function(d){this.uColor=d}};return c});

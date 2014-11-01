@@ -1,0 +1,151 @@
+    
+        body{
+            background: url(4.png) no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+      
+        h3 {
+            font-size: 20px;
+        }
+        .unbehaved-element {
+            font-size: 2em;
+        }
+        @media(max-width: 1580px) {
+            h3 {
+                font-size: 16px;
+            }
+            .unbehaved-element {
+                font-size: 1.9em; /* Fine tune unbehaved elements */
+            }
+        }
+        @media(max-width: 980px) {
+            h3 {
+                font-size: 12px;
+            }
+        }
+        .upper-nav{
+            background:#D5942F;
+            box-shadow: 0px 0px 10px 1px rgba(29, 22, 8, 1);
+            margin-bottom: 7px;
+        }
+        .down-nav{
+            background: #DADADA;
+            top:56px;
+            margin-bottom: 7px; 
+        }
+        .down-row{
+            width:90%;
+            margin: auto;
+        }
+        .wrapper{
+            display:table;
+            min-height: 100%;
+            width: 100%;
+            padding: 5px;
+            border: 1px solid rgba(223, 218, 218, 0.27);
+            height: auto;
+
+
+        }
+        .teacher-wrapper{
+            width: 98%;
+
+            margin: 1%;
+            position: relative;
+            float: left;
+
+        }
+        .teacher-image,comment-image{
+            margin: 1%;
+
+            float: left;
+            width: 10%;
+            height: 80%;
+            position:absolute;
+        }
+
+        .teacher-image img,.comment-image img{
+
+            width:100%;
+        }    
+
+
+        .clear{
+            clear: both;
+        }
+        .teacher-post{
+            -webkit-box-shadow: 0px 0px 12px 3px rgba(97, 146, 137, 0.2);
+            -moz-box-shadow: 0px 0px 12px 3px rgba(97, 146, 137, 0.2);
+            box-shadow: 0px 0px 10px 1px rgba(216, 199, 162, 0.2);
+            background-color: rgba(248, 247, 247, 0.05);
+            left: 0;
+            max-width: 100%;
+            float: left;
+            min-width: 100%;
+
+        }
+        .comment-post{
+            -webkit-box-shadow: 0px 0px 12px 3px rgba(97, 146, 137, 0.2);
+            -moz-box-shadow: 0px 0px 12px 3px rgba(97, 146, 137, 0.2);
+            box-shadow: 0px 0px 10px 1px rgba(216, 199, 162, 0.2);
+            background-color: rgba(248, 247, 247, 0.05);
+            min-width: 80%;
+
+            margin-left: 14%;
+            position: relative;
+            margin-bottom: 1%;
+
+        }
+
+        .teacher-post{
+            border-top-right-radius: 18px;
+            border-bottom-left-radius: 11px;
+        }
+
+        .teacher-post h4{
+            color: rgba(56, 182, 211, 0.99);
+            height: 2px;
+            margin-left:11%;
+            padding: 10px;
+
+        }
+        .comment-post h4{
+            color: rgba(56, 182, 211, 0.99);
+            height: 2px;
+            margin-left:11%;
+            padding: 10px;
+
+        }
+        p.teacher-body,p.comment-body{
+            margin-left:11%;
+            padding: 10px;
+        }
+        .submit-reply{
+            background: rgba(68, 174, 176, 0.2);
+            border-radius: 26%;
+            width: auto;
+            /* padding: 5px; */
+            margin: 0 14px 7px 0;   
+        }
+        .nav-tabs{
+            margin-left:31%;
+        }
+        .lecture{
+            float: left;
+
+            clear: both;
+            padding-left: 5px;
+            font-size: 14px;
+            padding-top: 5px;
+
+        }
+        .sidebar{
+            position: fixed
+        }
+
+
+
+    
