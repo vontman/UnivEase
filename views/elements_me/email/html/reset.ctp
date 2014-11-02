@@ -1,0 +1,3 @@
+<font face="Arial" style="font-size:18px;" ><?php __('For reset your password you should click the below link')?>:</font>
+<br /><br />
+<a href="<?php echo Router::url( array('controller' => 'users', 'action' => 'reset_password', base64_encode($user_data['User']['email'].'#'.'reset_password')),true)?>"><?php echo Router::url( array('controller' => 'users', 'action' => 'reset_password', base64_encode($user_data['User']['email'].'#'.'reset_password')),true)?></a>

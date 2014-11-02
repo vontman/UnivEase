@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html style="height: 100%;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<link rel="stylesheet" type="text/css" href="maia.css"> <style type="text/css">
+td { vertical-align: middle; } td.button { text-align: center; } td, tr, table { background-color: white !important; border: 0; } body { text-align: center } .container { width: 575px; margin: 0 auto; text-align: left; } h2 { color: #dd4b39; font-family: Arial, sans-serif; } .maia-button { width: 75px; font-size: 80%; padding: 4px 6px; background-image: none !important; font-family: Arial, sans-serif; } .maia-button-secondary { background-image: none !important; } .icon { text-align: center; padding: 10px; } form div { vertical-align: top; } form div label { display: inline; } .explanation { margin-top: 10px; }
+</style>
+<script type="text/javascript">
+
+    function getInternetExplorerVersion() {
+        var rv = -1;
+        var ua = navigator.userAgent;
+        var re = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+        var rt = new RegExp("Trident\/([0-9]{1,}[\.0-9]{0,})");
+        if (re.exec(ua) != null)
+            rv = parseFloat(RegExp.$1);
+        if (rt.exec(ua) != null)
+            rv = parseFloat(RegExp.$1) + 4.;
+
+        return rv;
+    }
+
+    window.onload = function () {
+        var lang = navigator.language ? navigator.language : navigator.browserLanguage;
+        lang = lang.toLowerCase();
+
+        var ver = getInternetExplorerVersion();
+
+        if (lang == "ko" || lang == "ko-kr") {
+            img1.src = ver > 9 ? "ko_ie10.png" : "ko_ie9.png";
+            browsers1.style.display = "";
+        } else if (lang == "zh-cn") {
+            img3.src = ver > 9 ? "ch_ie10.png" : "ch_ie9.png";
+            browsers3.style.display = "";
+        } else {
+            img2.src = ver > 9 ? "en_ie10.png" : "en_ie9.png";
+            browsers2.style.display = "";
+        }
+    }
+</script>
+</head>
+<body>
+ <div class="maia-header" id="maia-header">
+  <div class="maia-aux">
+  </div>
+ </div>
+ <div class="container" id="browsers1" style="display:none"><h2>IE 문서 모드 설정 방법</h2>
+    <div>
+        <dl><strong>1. 개발자 도구창을 엽니다. 개발자 도구창을 열려면</strong></dl>
+        <ul>
+            <li>메뉴 모음의 [도구 - F12 개발자 도구(L)]</li>
+            <li>F12 단축키</li>
+            <li>오른쪽 상단에 도구 단추 선택</li>
+              <strong>중 한 가지 방법을 선택합니다.</strong>
+        </ul>
+       <dl><strong>2. [문서 모드]를 확인하고 Internet Explorer 9 표준으로 변경합니다.</strong></dl>
+       <dl><img id="img1" src="ko_ie9.png" style="width:574px"></dl>
+    </div>
+       <a href="javascript:history.back();" class="maia-button maia-button-secondary">돌아가기</a>
+ </div>
+ <div class="container" id="browsers2" style="display:none"><h2>Follow below steps to configure IE Document mode </h2>
+    <div>
+        <dl><strong>1. Open the developer tool window with below</strong></dl>
+        <ul>
+            <li>Menu -> Tool -> Developer tool(F12)</li>
+            <li>Shortcut key F12</li>
+            <li>Toolbar button on upper end</li>
+                <strong>Select from one of the ways</strong>
+        </ul>
+       <dl><strong>2. Change [Document mode] to Internet Explorer standard.</strong></dl>
+       <dl><img id="img2" src="en_ie9.png" style="width:574px"></dl>
+    </div>
+        <a href="javascript:history.back();" class="maia-button maia-button-secondary">back</a>
+ </div>
+ <div class="container" id="browsers3" style="display:none"><h2>根据以下步骤配置IE文件模式 </h2>
+    <div>
+        <dl><strong>1. 打开下面的开发工具窗口</strong></dl>
+        <ul>
+            <li>菜单 -> 工具  -> 开发工具(F12)</li>
+            <li>快捷键 F12</li>
+            <li>上面的工具栏按钮</li>
+                <strong>选择一种方法/选择一个路径</strong>
+        </ul>
+       <dl><strong>2. 把文件模式更改为IE浏览器的标准模式”</strong></dl>
+       <dl><img id="img3" src="ch_ie9.png" style="width:574px"></dl>
+    </div>
+        <a href="javascript:history.back();" class="maia-button maia-button-secondary">后退</a>
+ </div>
+</body>
+</html>

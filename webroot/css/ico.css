@@ -1,0 +1,297 @@
+@font-face {
+    font-family: 'learning';
+    src:url('fonts/learning.eot');
+    src:url('fonts/learning.eot?#iefix') format('embedded-opentype'),
+        url('fonts/learning.woff') format('woff'),
+        url('fonts/learning.ttf') format('truetype'),
+        url('fonts/learning.svg#learning') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+    font-family: 'learning';
+    content: attr(data-icon);
+    speak: none;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="symp-"] {
+*/
+.symp-home, .symp-home-2, .symp-tv, .symp-tv-2, .symp-calendar, .symp-calendar-2, .symp-cog, .symp-equalizer, .symp-envelope, .symp-link, .symp-number, .symp-number-2, .symp-number-3, .symp-number-4, .symp-number-5, .symp-number-6, .symp-number-7, .symp-number-8, .symp-number-9, .symp-number-10, .symp-camera, .symp-camera-2, .symp-camera-3, .symp-film, .symp-microphone, .symp-microphone-2, .symp-microphone-3, .symp-checkmark, .symp-checkmark-2, .symp-cancel, .symp-cancel-2, .symp-plus, .symp-plus-2, .symp-minus, .symp-minus-2, .symp-notice, .symp-warning, .symp-suitcase, .symp-pictures, .symp-picture, .symp-pictures-2, .symp-alarm-clock, .symp-wallet, .symp-eye, .symp-site-map, .symp-chart, .symp-cog-2, .symp-chart-2, .symp-location, .symp-download, .symp-phone, .symp-locked, .symp-unlocked, .symp-grid, .symp-list, .symp-list-2, .symp-grid-2, .symp-brush, .symp-pen, .symp-chat, .symp-comments, .symp-chat-2, .symp-chat-3, .symp-money-bag, .symp-volume, .symp-resize, .symp-download-2, .symp-profile, .symp-edit, .symp-pin, .symp-pen-2, .symp-pencil, .symp-info, .symp-address-book, .symp-pictures-3, .symp-heart, .symp-heart-2, .symp-ruler, .symp-switch, .symp-trash, .symp-edit-2, .symp-eye-open, .symp-chevron-up, .symp-chevron-down, .symp-plus-sign, .symp-sitemap {
+    font-family: 'learning';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+.symp-home:before {
+    content: "\21";
+}
+.symp-home-2:before {
+    content: "\22";
+}
+.symp-tv:before {
+    content: "\23";
+}
+.symp-tv-2:before {
+    content: "\24";
+}
+.symp-calendar:before {
+    content: "\25";
+}
+.symp-calendar-2:before {
+    content: "\26";
+}
+.symp-cog:before {
+    content: "\27";
+}
+.symp-equalizer:before {
+    content: "\28";
+}
+.symp-envelope:before {
+    content: "\29";
+}
+.symp-link:before {
+    content: "\2a";
+}
+.symp-number:before {
+    content: "\2b";
+}
+.symp-number-2:before {
+    content: "\2c";
+}
+.symp-number-3:before {
+    content: "\2d";
+}
+.symp-number-4:before {
+    content: "\2e";
+}
+.symp-number-5:before {
+    content: "\2f";
+}
+.symp-number-6:before {
+    content: "\30";
+}
+.symp-number-7:before {
+    content: "\31";
+}
+.symp-number-8:before {
+    content: "\32";
+}
+.symp-number-9:before {
+    content: "\33";
+}
+.symp-number-10:before {
+    content: "\34";
+}
+.symp-camera:before {
+    content: "\35";
+}
+.symp-camera-2:before {
+    content: "\36";
+}
+.symp-camera-3:before {
+    content: "\37";
+}
+.symp-film:before {
+    content: "\38";
+}
+.symp-microphone:before {
+    content: "\39";
+}
+.symp-microphone-2:before {
+    content: "\3a";
+}
+.symp-microphone-3:before {
+    content: "\3b";
+}
+.symp-checkmark:before {
+    content: "\3c";
+}
+.symp-checkmark-2:before {
+    content: "\3d";
+}
+.symp-cancel:before {
+    content: "\3e";
+}
+.symp-cancel-2:before {
+    content: "\3f";
+}
+.symp-plus:before {
+    content: "\40";
+}
+.symp-plus-2:before {
+    content: "\41";
+}
+.symp-minus:before {
+    content: "\42";
+}
+.symp-minus-2:before {
+    content: "\43";
+}
+.symp-notice:before {
+    content: "\44";
+}
+.symp-warning:before {
+    content: "\45";
+}
+.symp-suitcase:before {
+    content: "\46";
+}
+.symp-pictures:before {
+    content: "\47";
+}
+.symp-picture:before {
+    content: "\48";
+}
+.symp-pictures-2:before {
+    content: "\49";
+}
+.symp-alarm-clock:before {
+    content: "\4a";
+}
+.symp-wallet:before {
+    content: "\4b";
+}
+.symp-eye:before {
+    content: "\4c";
+}
+.symp-site-map:before {
+    content: "\4d";
+}
+.symp-chart:before {
+    content: "\4e";
+}
+.symp-cog-2:before {
+    content: "\4f";
+}
+.symp-chart-2:before {
+    content: "\50";
+}
+.symp-location:before {
+    content: "\51";
+}
+.symp-download:before {
+    content: "\52";
+}
+.symp-phone:before {
+    content: "\53";
+}
+.symp-locked:before {
+    content: "\54";
+}
+.symp-unlocked:before {
+    content: "\55";
+}
+.symp-grid:before {
+    content: "\56";
+}
+.symp-list:before {
+    content: "\57";
+}
+.symp-list-2:before {
+    content: "\58";
+}
+.symp-grid-2:before {
+    content: "\59";
+}
+.symp-brush:before {
+    content: "\5a";
+}
+.symp-pen:before {
+    content: "\5b";
+}
+.symp-chat:before {
+    content: "\5c";
+}
+.symp-comments:before {
+    content: "\5d";
+}
+.symp-chat-2:before {
+    content: "\5e";
+}
+.symp-chat-3:before {
+    content: "\5f";
+}
+.symp-money-bag:before {
+    content: "\60";
+}
+.symp-volume:before {
+    content: "\61";
+}
+.symp-resize:before {
+    content: "\62";
+}
+.symp-download-2:before {
+    content: "\63";
+}
+.symp-profile:before {
+    content: "\64";
+}
+.symp-edit:before {
+    content: "\65";
+}
+.symp-pin:before {
+    content: "\66";
+}
+.symp-pen-2:before {
+    content: "\67";
+}
+.symp-pencil:before {
+    content: "\68";
+}
+.symp-info:before {
+    content: "\69";
+}
+.symp-address-book:before {
+    content: "\6a";
+}
+.symp-pictures-3:before {
+    content: "\6b";
+}
+.symp-heart:before {
+    content: "\6c";
+}
+.symp-heart-2:before {
+    content: "\6d";
+}
+.symp-ruler:before {
+    content: "\6e";
+}
+.symp-switch:before {
+    content: "\6f";
+}
+.symp-trash:before {
+    content: "\70";
+}
+.symp-edit-2:before {
+    content: "\71";
+}
+.symp-eye-open:before {
+    content: "\72";
+}
+.symp-chevron-up:before {
+    content: "\73";
+}
+.symp-chevron-down:before {
+    content: "\74";
+}
+.symp-plus-sign:before {
+    content: "\75";
+}
+.symp-sitemap:before {
+    content: "\76";
+}

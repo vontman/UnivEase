@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en" >
+<!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Dashboard</title>
+<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="ico.css">
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="fonts/ar-fonts.css">
+<link rel="stylesheet" href="switch.css">
+ <script src="js/modernizr.js"></script>
+</head>
+<body>
+
+
+<div class="layout">
+<div class="header">
+  <div class="logo"><a href="#"><img src="img/logo.png" alt="" /></a></div>
+  <div class="login-as">
+  	<a href="#" data-toggle="dropdown">
+        <img src="img/avatar.png" alt="" />
+
+    <span class="user-name font-a">سالى محمد</span>
+    <span class="job">مدرس تنمية بشرية</span>
+    </a>
+<ul class="dropdown-menu">
+                  <li><a href="#">تعديل الملف الشخصى <i class="icon-user"></i></a></li>
+                  <li><a href="#">الرسائل الخاصة <i class="icon-envelope"></i></a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">تسجيل الخروج <i class="icon-off"></i></a></li>
+                </ul>
+  </div>
+   <div class="clear"></div>
+</div>
+<div class="sidebar leftpanel">
+  <ul>
+    <li><a href="#"><span class="symp-home-2" aria-hidden="true"></span>الرئيسية</a></li>
+    <li><a href="#" class="active"><span class="symp-tv" aria-hidden="true"></span>الكورسات</a></li>
+    <li><a href="#"><span class="symp-calendar" aria-hidden="true"></span>الاحداث</a></li>
+    <li><a href="#"><span class="symp-cog" aria-hidden="true"></span>الاعدادات</a></li>
+    <li><a href="#"><span class="symp-envelope" aria-hidden="true"></span>الرسائل</a></li>
+  </ul>
+</div>
+<div class="main">
+  <h1>تعديل الملف الشخصى</h1>
+   <div id="students-view">
+  <form id="" action="" method="">
+  	<div class="input text">
+      <label>اسم المستخدم</label>
+		<input type="text"  />
+    </div>
+  	<div class="input text">
+      <label>كلمة المرور</label>
+		<input type="text"  />
+    </div>
+  	<div class="input text">
+      <label>البريد الالكترونى</label>
+		<input type="text"  />
+    </div>
+  	<div class="input text">
+      <label>العنوان</label>
+		<input type="text"  />
+    </div>
+      <div class="input checkbox">
+      <label>حالة العضوية</label>
+      <div class="switch" data-on-label="<i class='icon-ok icon-white'></i>" data-off-label="<i class='icon-remove'></i>">
+        <input type="checkbox" checked />
+      </div>
+    </div>
+    <div class="form-actions">
+      <button class="btn btn-primary" type="submit">حفظ</button>
+      <button class="btn" type="button">الغاء</button>
+    </div>
+  </form>
+   
+   </div>
+ </div>
+ </div>
+<!--Javascript--> 
+<script src="js/jquery.js"></script> 
+<script src="js/app.js"></script> 
+<script src="js/switch.js"></script> 
+<script src="js/tabdrop.js"></script>
+</body>
+</html>

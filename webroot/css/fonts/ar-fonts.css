@@ -1,0 +1,7 @@
+@font-face { font-family: "gessbold"; src: url("GE_SS_Two_Bold.otf"); font-weight: normal; font-style: normal; }
+@font-face { font-family: "gesslight"; src: url("GE_SS_Two_Light.otf"); font-weight: normal; font-style: normal; }
+@font-face { font-family: "gessmed"; src: url("GE_SS_Two_Medium.otf"); font-weight: normal; font-style: normal; }
+
+ .font-a { font-family: "gesslight", Tahoma, Geneva, sans-serif }
+
+ 

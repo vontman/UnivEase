@@ -1,0 +1,1 @@
+define("CCompileOption",["CAssertUtil"],function(b){function a(c){b.PrivateConstructor()}a.prototype={bDebug:true,iTimerInterval:1};return a});

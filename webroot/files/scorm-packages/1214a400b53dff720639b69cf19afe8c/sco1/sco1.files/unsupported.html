@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html style="height: 100%;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<link rel="stylesheet" type="text/css" href="doc/maia.css"> <style type="text/css">
+td { vertical-align: middle; } td.button { text-align: center; } td, tr, table { background-color: white !important; border: 0; } body { text-align: center } .container { width: 575px; margin: 0 auto; text-align: left; } h2 { color: #dd4b39; font-family: Arial, sans-serif; } .maia-button { width: 75px; font-size: 80%; padding: 4px 6px; background-image: none !important; font-family: Arial, sans-serif; } .maia-button-secondary { background-image: none !important; } .icon { text-align: center; padding: 10px; } form div { vertical-align: top; } form div label { display: inline; } .explanation { margin-top: 10px; }
+</style>
+<script type="text/javascript">
+
+    function getInternetExplorerVersion() {
+        var rv = -1;
+        var ua = navigator.userAgent;
+        var re = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+        var rt = new RegExp("Trident\/([0-9]{1,}[\.0-9]{0,})");
+        if (re.exec(ua) != null)
+            rv = parseFloat(RegExp.$1);
+        if (rt.exec(ua) != null)
+            rv = parseFloat(RegExp.$1) + 4.;
+
+        return rv;
+    }
+
+    window.onload = function () {
+
+        var lang = navigator.language ? navigator.language : navigator.browserLanguage;
+        lang = lang.toLowerCase();
+        var isKor = (lang == "ko" || lang == "ko-kr")
+        var isZn = (lang == "zh-cn")
+        var b1 = isKor ? browsers1 : isZn ? browsers5 : browsers3;
+        var b2 = isKor ? browsers2 : isZn ? browsers6 : browsers4;
+
+        if (navigator.appName == 'Microsoft Internet Explorer') {
+            if (getInternetExplorerVersion() > 8 && document.documentMode < 9) {
+                b2.style.display = "";
+            }
+            else {
+                b1.style.display = "";
+            }
+        } else {
+            b1.style.display = "";
+        }
+    }
+</script>
+</head>
+<body>
+    <div class="maia-header" id="maia-header">
+    <div class="maia-aux">
+    </div>
+    </div>
+     <div class="container" id="browsers1" style="display:none">    <h2>지원되지 않는 브라우저를 사용하고 있는 것 같습니다.</h2>
+       <p> 예전 브라우저를 사용하면 콘텐츠 보기에 문제가 발생할 수 있습니다. 원활한 콘텐츠 보기를 위해 브라우저의 최소 요구사양을 충족해야 합니다. 지원하는 브라우저로 설치 또는  <b>
+          <font color="#1e90ff">최신 브라우저로 업데이트</font></b>하십시오.
+       </p>
+        <div style="width:500px">
+            <dl><strong>브라우저 요구사항</strong></dl>            
+            <ul><li><a href="http://www.google.com">Chrome</a>&nbsp;(권장 브라우저)</li>
+            <li><a href="http://www.Firefox.com">Firefox</a></li>
+            <li><a href="http://windows.microsoft.com/"></a>Internet Explorer 9 이상</li>
+            <li><a href="http://www.apple.com/kr/safari/"></a>Safari</li>
+            </ul>
+        </div>
+        <a href="javascript:history.back();" class="maia-button maia-button-secondary">돌아가기</a>
+    </div>
+    <div class="container" id="browsers2" style="display:none">    <h2>지원되지 않는 브라우저 문서모드를 사용하는 것 같습니다.</h2>
+        <p> 최신 IE 버전이라도 문서 모드로 인해 문제가 발생할 수 있습니다. F12개발자도구(F12)에서 문서 모드:Internet Explorer 9 표준 인지 확인하십시오.
+        <a href="doc/ie_document.html">(IE 문서 모드 설정 방법)</a>
+        </p>
+        <a href="javascript:history.back();" class="maia-button maia-button-secondary">돌아가기</a>
+    </div>
+    <div class="container" id="browsers3" style="display:none">    <h2>Incompatible or old version use.</h2>
+       <p> Error in contents view could be due to browser Incompatibility or use of older version Install supported browser or
+       <b><font color="#1e90ff">update to newer version.</font></b>
+       </p>
+        <div style="width:500px">
+            <dl><strong>Compatible browser</strong></dl>
+            <ul><li><a href="http://www.google.com">Chrome</a>&nbsp;(Recommend)</li>
+            <li><a href="http://www.Firefox.com">Firefox</a></li>
+            <li><a href="http://windows.microsoft.com/">Internet Explorer 9 or above</a></li>
+            <li><a href="http://www.apple.com/kr/safari/">Safari</a></li>
+            </ul>
+            </div>
+             <a href="javascript:history.back();" class="maia-button maia-button-secondary">back</a>
+    </div>
+    <div class="container" id="browsers4" style="display:none">    <h2>Non-Supported browser's Document mode</h2>
+       <p> Check and configure IE document mode to "Internet Explorer Standard"
+       <a href="doc/ie_document.html">(Follow below steps to configure Document mode)</a>
+       </p>
+        <a href="javascript:history.back();" class="maia-button maia-button-secondary">back</a>
+    </div>
+    <div class="container" id="browsers5" style="display:none">    <h2>使用不兼容版本或旧版本</h2>
+       <p> 查看内容时报错可能是由于浏览器不兼容或者使用比较旧的版本。
+       <b><font color="#1e90ff">安装支持的浏览器或者更新到较新的版本。</font></b>
+       </p>
+        <div style="width:500px">
+            <dl><strong>兼容的浏览器</strong></dl>
+            <ul><li><a href="http://www.google.com">Chrome</a>&nbsp;(推荐)</li>
+            <li><a href="http://www.Firefox.com">Firefox</a></li>
+            <li><a href="http://windows.microsoft.com/">IE浏览器9 或以上</a></li>
+            <li><a href="http://www.apple.com/kr/safari/">Safari</a></li>
+            </ul>
+            </div>
+             <a href="javascript:history.back();" class="maia-button maia-button-secondary">后退</a>
+    </div>
+    <div class="container" id="browsers6" style="display:none">    <h2>不支持的浏览器的文件模式</h2>
+       <p>检查和配置IE文件模式到IE浏览器的标准模式
+       <a href="doc/ie_document.html">(根据以下步骤配置文件模式)</a>
+       </p>
+        <a href="javascript:history.back();" class="maia-button maia-button-secondary">后退</a>
+    </div>
+    </body>
+</html>

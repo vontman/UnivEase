@@ -1,0 +1,1 @@
+define("CStopTypeAfterNSec",["CStopType"],function(b){function a(d,c){b.call(this,d*1000);this.bMouseOrKey=c||false}a.prototype=new b();a.prototype.CanContinueWithMouse=function(){return this.bMouseOrKey};a.prototype.CanContinueWithTime=function(){return true};return a});
