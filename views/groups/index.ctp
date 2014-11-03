@@ -14,10 +14,10 @@
                 <div class="collapse navbar-collapse" id="collapse">
                     <ul class="nav nav-tabs">
                         
-                        <li class="active"><a href="<?php echo Router::url(array('action'=>'index')) ?>">all</a></li>
-                        <li><a href="<?php echo Router::url(array('action'=>'users',$id)) ?>">users</a></li>
-                        <li><a href="<?php echo Router::url(array('action'=>'lecture')) ?>">lecture</a></li>
-                        <li><a href="<?php echo Router::url(array('action'=>'request')) ?>">request</a></li>
+                        <li class="active"><a href="<?php // echo Router::url(array('action'=>'index')) ?>">all</a></li>
+                        <li><a href="<?php // echo Router::url(array('action'=>'users',$id)) ?>">users</a></li>
+                        <li><a href="<?php // echo Router::url(array('action'=>'lecture')) ?>">lecture</a></li>
+                        <li><a href="<?php // echo Router::url(array('action'=>'request')) ?>">request</a></li>
                     </ul>
                 </div>
             </div>
@@ -32,27 +32,32 @@
         <li><a data-toggle="tab" href="#group_info">Info</a></li>
         </li>
     </ul>
-        <script>
+    <script>
         $('#myTab a[data-toggle="tab"]').click(function(){
             var trgt=$(this).attr('href');
             var link=$(trgt).attr('target');
-            $(trgt).load(link+'.ctp');
-            console.log(link);
-        });
+            setTimeout(function(){
+                $('#myTabContent')
+            },500);
+            $(trgt).load("<?php echo Router::url(array('controller' => 'groups')) ;?>/"+link+"/<?php echo $id;?>");
+        });            
+        setTimeout(function(){   
+            $('#myTab a[href="#view_posts"]').trigger('click');
+        },100);
 
     </script>
     <div class="tab-content" id="myTabContent">
         <div id="view_posts" class="tab-pane fade in active" target="view_posts">
-adfadsf
+
         </div>
         <div id="users" class="tab-pane fade in" target="users">
-            adsfdasfasdf
+            
         </div>
         <div id="uploads" class="tab-pane fade in" target="uploads">
-            asdfds
+            
         </div>
-        <div id="group_info" class="tab-pane fade in" target="info">
-            asdfads
+        <div id="group_info" class="tab-pane fade in" target="group_info">
+            
         </div>
     </div>
 </div>

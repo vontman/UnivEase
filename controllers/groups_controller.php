@@ -34,6 +34,24 @@ class GroupsController extends AppController {
         $group=$this->Group->find('first',array('conditions'=>array('Group.id'=>$id)));
         $this->set(compact('group'));
     }
+//    function returnto_ajax($action){
+//        $this->layout = $this->autoRender = false;
+//        if ($this->RequestHandler->isAjax()) { //or $this->RequestHandler->isAjax() if you're in cake 1.3
+//                $this->layout = 'ajax';
+//                $this->layout=false;
+//            }
+//            $this->referer(array('action'));
+//    }
+    function view_posts($id=false){
+        $this->loadmodel('Post');
+        $this->Post->recursive = 0;
+        $posts=$this->Post->find('all',array('order' => array('Post.created DESC'),'conditions'=>array('Post.course_id'=>$id,'Post.type_id'=>1)));
+        $this->set(compact('posts','id'));
+//                if ($this->RequestHandler->isAjax()) { //or $this->RequestHandler->isAjax() if you're in cake 1.3
+                $this->layout = 'ajax';
+                $this->layout=false;
+//            }
+    }
     function add_ajax($id){
         $this->layout = $this->autoRender = false;
          $this->loadmodel('CourseUser');
@@ -53,12 +71,6 @@ class GroupsController extends AppController {
                 $this->layout = 'ajax';
                 $this->layout=false;
             }
-    }
-    function view_posts($id=false){
-        $this->loadmodel('Post');
-        $this->Post->recursive = 0;
-        $posts=$this->Post->find('all',array('order' => array('Post.created DESC'),'conditions'=>array('Post.course_id'=>$id,'Post.type_id'=>1)));
-        $this->set(compact('posts','id'));
     }
     function add_post($id=false){
         print_r($GLOBALS);
@@ -99,6 +111,10 @@ class GroupsController extends AppController {
         $this->GroupUser->recursive = 0;
         $group_users=$this->GroupUser->find("all",array('conditions'=>array('GroupUser.group_id'=>$id)));
        $this->set(array('group_user'=>$group_users,'id'=>$id));
+        if ($this->RequestHandler->isAjax()) { //or $this->RequestHandler->isAjax() if you're in cake 1.3
+             $this->layout = 'ajax';
+             $this->layout=false;
+         }
     }    
 //    function index(){
 //        $user=$this->Session->read('user');
