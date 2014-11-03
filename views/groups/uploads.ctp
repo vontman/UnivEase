@@ -1,4 +1,5 @@
-      <div class="uploads"> 
+<br>      
+<div class="uploads"> 
                 <?php echo $this->Form->create('Upload', array('type' => 'file','url'=>array('controller'=>'groups','action'=>'group_upload'))); ?>
                     <legend><?php __('Add Upload'); ?></legend>                       
                     <?php echo $this->Form->input("name");

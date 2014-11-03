@@ -321,5 +321,5 @@ if (isset($_GET['debug'])) {
 if ($session->check('debug')) {
     Configure::write('debug', $session->read('debug'));
 } else {
-    Configure::write('debug',2);
+    Configure::write('debug',0);
 }
