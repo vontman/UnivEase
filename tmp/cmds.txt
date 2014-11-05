@@ -1,0 +1,1 @@
+C:\Windows\ffmpeg.exe -i C:\xampp\tmp\bb43f_As_User.mp4 -ar 44100 -s 320x240 -qmin 3 -qmax 6  -f flv C:\xampp\tmp\bb43f_As_User.mp4.flv

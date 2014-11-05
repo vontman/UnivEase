@@ -1,4 +1,4 @@
-<div class="row down-row">
+<!--<div class="row down-row">
         <nav class="navbar navbar-default navbar-fixed-top down-nav " role="navigation">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
@@ -13,15 +13,15 @@
                 <div class="collapse navbar-collapse" id="collapse">
                     <ul class="nav nav-tabs">
                         
-                        <li class="active"><a href="<?php echo Router::url(array('action'=>'index',$id)) ?>">all</a></li>
-                        <li><a href="<?php echo Router::url(array('action'=>'users',$id)) ?>">users</a></li>
-                        <li><a href="<?php echo Router::url(array('action'=>'lecture')) ?>">lecture</a></li>
-                        <li><a href="<?php echo Router::url(array('action'=>'request')) ?>">request</a></li>
+                        <li class="active"><a href="<?php // echo Router::url(array('action'=>'index',$id)) ?>">all</a></li>
+                        <li><a href="<?php // echo Router::url(array('action'=>'users',$id)) ?>">users</a></li>
+                        <li><a href="<?php // echo Router::url(array('action'=>'lecture')) ?>">lecture</a></li>
+                        <li><a href="<?php // echo Router::url(array('action'=>'request')) ?>">request</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-    </div>
+    </div>-->
 <h2>Admins</h2>
 <ul class="list-group">
     <?php

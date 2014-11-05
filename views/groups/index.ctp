@@ -33,30 +33,26 @@
         </li>
     </ul>
     <script>
-        $('#myTab a[data-toggle="tab"]').click(function(){
+        $('#myTab a').click(function(){
             var trgt=$(this).attr('href');
-            var link=$(trgt).attr('target');
-            setTimeout(function(){
-                $('#myTabContent')
-            },500);
-            $(trgt).load("<?php echo Router::url(array('controller' => 'groups')) ;?>/"+link+"/<?php echo $id;?>");
+            $(trgt).load("<?php echo Router::url(array('controller' => 'groups')) ;?>/"+trgt.substring(1)+"/<?php echo $id;?>");
         });            
         setTimeout(function(){   
             $('#myTab a[href="#view_posts"]').trigger('click');
-        },100);
+        },1);
 
     </script>
     <div class="tab-content" id="myTabContent">
-        <div id="view_posts" class="tab-pane fade in active" target="view_posts">
+        <div id="view_posts" class="tab-pane fade in active">
 
         </div>
-        <div id="users" class="tab-pane fade in" target="users">
+        <div id="users" class="tab-pane fade in">
             
         </div>
-        <div id="uploads" class="tab-pane fade in" target="uploads">
+        <div id="uploads" class="tab-pane fade in">
             
         </div>
-        <div id="group_info" class="tab-pane fade in" target="group_info">
+        <div id="group_info" class="tab-pane fade in" >
             
         </div>
     </div>

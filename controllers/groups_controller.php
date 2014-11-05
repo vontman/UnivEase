@@ -47,10 +47,6 @@ class GroupsController extends AppController {
         $this->Post->recursive = 0;
         $posts=$this->Post->find('all',array('order' => array('Post.created DESC'),'conditions'=>array('Post.course_id'=>$id,'Post.type_id'=>1)));
         $this->set(compact('posts','id'));
-//                if ($this->RequestHandler->isAjax()) { //or $this->RequestHandler->isAjax() if you're in cake 1.3
-                $this->layout = 'ajax';
-                $this->layout=false;
-//            }
     }
     function add_ajax($id){
         $this->layout = $this->autoRender = false;
@@ -144,12 +140,25 @@ class GroupsController extends AppController {
 ;    }
     function uploads($id=false){
         $this->loadModel('Upload');
-        $this->Upload->recursive=0;
-        $group['uploads']['pdf']=$this->Upload->find('all',array('conditions'=>array('Upload.group_id'=>$id,'Upload.type'=>'pdf'),'order'=>'Upload.name'));
-        $group['uploads']['img']=$this->Upload->find('all',array('conditions'=>array('Upload.group_id'=>$id,'Upload.type !='=>'pdf'),'order'=>'Upload.name'));
-        $group['Group']['id']=$id;
-        $this->set("group",$group);
+        $this->set('id',$id);
     }
+   function uploads_ajax($id,$type){
+       $this->layout='ajax';
+        $this->loadModel('Upload');
+        $this->Upload->recursive=0;
+        if($type=='all'){
+            $group['uploads']=$this->Upload->find('all',array('conditions'=>array('Upload.group_id'=>$id)));
+        }elseif($type=='pdf'){
+            $group['uploads']=$this->Upload->find('all',array('conditions'=>array('Upload.group_id'=>$id,'Upload.type'=>'pdf'),'order'=>'Upload.name'));
+        }elseif($type=='doc'){
+            $group['uploads']=$this->Upload->find('all',array('conditions'=>array('Upload.group_id'=>$id,'Upload.type'=>array('doc','docx')),'order'=>'Upload.name'));
+        }elseif($type=='ppt'){
+            $group['uploads']=$this->Upload->find('all',array('conditions'=>array('Upload.group_id'=>$id,'Upload.type'=>array('ppt','pptx')),'order'=>'Upload.name'));
+        }elseif($type=='img'){
+            $group['uploads']=$this->Upload->find('all',array('conditions'=>array('Upload.group_id'=>$id,'Upload.type'=>array('gif','jpg','png')),'order'=>'Upload.name'));
+        }
+        $this->set(compact(array('group','type','id')));
+   }
     function admin_add(){
         $courses=$this->Group->Course->find('list',array('order'=>"Course.name"));
         $this->set('courses',$courses);

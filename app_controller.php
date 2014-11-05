@@ -234,7 +234,7 @@ class AppController extends Controller {
             $array=explode('.',$file['name']);
             $this->data['Upload']['type']=array_pop($array);
 //            if($type==0){
-                $destination=WWW_ROOT . 'uploads/groups' . DS .$this->data['Upload']['name'].$this->data['Upload']['type'];
+                $destination=WWW_ROOT . 'uploads/groups' . DS .$this->data['Upload']['name'].".".$this->data['Upload']['type'];
 //            }elseif($type==1){
 //                $destination=WWW_ROOT . 'uploads/courses' . DS .$this->data['Upload']['name'].$this->data['Upload']['type'];
 //            }
