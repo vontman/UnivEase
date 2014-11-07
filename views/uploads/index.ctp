@@ -2,8 +2,8 @@
 <div class="uploads"> 
         <?php echo $this->Form->create('Upload', array('type' => 'file','url'=>array('controller'=>'uploads','action'=>'add_upload'))); ?>
             <legend><?php __('Add Upload'); ?></legend>                       
-            <?php echo $this->Form->input("name");
-            echo $this->Form->input("File",array('type'=>'file','id'=>'file_upload'));
+            <?php echo $this->Form->input("name",array('required'));
+            echo $this->Form->input("File",array('type'=>'file','id'=>'file_upload','required'));
             echo $this->Form->input('group_id',array('type'=>'hidden','value'=>0));
             echo $this->Form->input('folder_id',array('type'=>'hidden','value'=>0));
         echo $this->Form->end("Upload");?>
@@ -33,7 +33,9 @@
                             console.log(key+':'+value);
                         });
                       });
+                      $('#UploadName').val(files[0]['name']);
                   });
+                  var add_folder_toggle=false;
                   var counter=0;
                   var prev_folder=[0];
                   var selected_folder=0;
@@ -42,16 +44,15 @@
                   var last_url;
                   var type;
                   function load_uploads(selected_url){
+                      $('#UploadFolderId').val(selected_folder);
                       selected_url=selected_url || last_url;
                       last_url=selected_url;
-                     $('.uploads_view ul').children().fadeOut('100',function(){$(this).remove();});
+                     $('.uploads_view ul').children().slideUp('100',function(){$(this).remove();});
                      $.post(selected_url+'/'+prev_folder[counter],{
                             uploads_type:type},
                             function(data){
                                 console.log(selected_url);
-//                                $(newfolder).appendTo('.uploads_view ul').fadeIn(100);
-                                $(data).appendTo('.uploads_view ul').fadeIn(100);
-//                                $(newfolder).insertAfter('.uploads_view ul h3').fadeIn(100);
+                                $(data).appendTo('.uploads_view ul').slideDown(100);
                             }
                         );
                   }
@@ -70,10 +71,20 @@
                       selected_folder=$(this).attr('folder_id');
                       load_uploads(url+type+'/0/'+selected_folder);
                   });
-                  $('#uploadsTab a[href="all"]').trigger('click');
+                  $('.uploads_view').click(function(){
+                    setTimeout(function(){
+                      if(!add_folder_toggle&&$('#add_folder_input').length){
+                        $('#add_folder_input').parent().remove();
+                      }
+                      add_folder_toggle=false;
+                    },100);
+                  });
                   $('.uploads_view').delegate('#add_folder','click',function(){
-                      $('.uploads_view ul').add('<li><input id="add_folder_input" type="text"/></li>');
-                      $('<li><input id="add_folder_input" type="text"/></li>').insertAfter($(this));
+                      setTimeout(function(){add_folder_toggle=true;},100);
+                      if(!$('#add_folder_input').length){
+                            $('.uploads_view ul').add('<li><input id="add_folder_input" type="text"/></li>');
+                            $('<li><input id="add_folder_input" type="text"/></li>').insertAfter($(this));
+                      }
                       $('.uploads_view ul input').focus();
                   });
                   $('.uploads_view ul').delegate('#add_folder_input','keypress',function(key){
@@ -83,10 +94,12 @@
                           {name:name},
                           function(data){
                               if(data){
+                                  setTimeout(function(){add_folder_toggle=false;},100);
                                   load_uploads();
                                 }
                             });
                         }
                   });
+                  $('#uploadsTab a[href="all"]').trigger('click');
 
               </script>

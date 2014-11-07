@@ -70,6 +70,8 @@ class UploadsController extends AppController{
         $this->set(compact(array('group','folder_id','back_id','group_id','folders')));
    }
     function uploadFile($type) {
+            $mod_name=  explode('.',$this->data['Upload']['name']);
+            $this->data['Upload']['name']=$mod_name[0];
             $file = $this->data['Upload']['File'];
             $this->data['Upload']['post_type']=0;
             $this->data['Upload']['group_id']=$this->data['Upload']['group_id'];
