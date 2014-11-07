@@ -21,7 +21,7 @@ class Group extends AppModel {
             'conditions' => '',
             'fields' => '',
             'order' => ''
-        ),
+        )
      
     );
 //    function beforeSave($options = array()) {

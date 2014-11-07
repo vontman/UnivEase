@@ -226,24 +226,7 @@ class AppController extends Controller {
         $this->set('cuser', $course);
         return $course;
     }
-    function uploadFile($type) {
-            $this->loadModel('Upload');
-            $file = $this->data['Upload']['File'];
-            $this->data['Upload']['post_type']=0;
-            $this->data['Upload']['group_id']=$this->data['Upload']['group_id'];
-            $array=explode('.',$file['name']);
-            $this->data['Upload']['type']=array_pop($array);
-//            if($type==0){
-                $destination=WWW_ROOT . 'uploads/groups' . DS .$this->data['Upload']['name'].".".$this->data['Upload']['type'];
-//            }elseif($type==1){
-//                $destination=WWW_ROOT . 'uploads/courses' . DS .$this->data['Upload']['name'].$this->data['Upload']['type'];
-//            }
-            if (move_uploaded_file($file['tmp_name'], $destination)) {
-                return true;
-            }else{
-                return false;
-            }
-        }
+
     function __change_title($title = false) {
 
         $prefix = empty($this->params['prefix']) ? '' : $this->params['prefix'];
