@@ -1,9 +1,12 @@
 
 <?php
-        echo '<h3>'.$type.'</h3>'; 
+        echo '<li id="add_folder" style="display:none; ">'.$this->Html->image('folder_icon.png',array('width'=>'25px','height'=>'25px')).'Add New Folder</li>'; 
+        if($folder_id!=0){
+            echo '<li folder_id="'.$back_id.'" id="back_folder" style="display:none; ">'.$this->Html->image('folder_icon.png',array('width'=>'25px','height'=>'25px')).'back ...</li>';
+        }
       foreach($folders as $upload){
           $upload=$upload['UploadFolder'];
-        echo "<li style='display:none;'>".$this->Html->image('folder_icon.png',array('width'=>'50px','height'=>'50px')).$this->Html->link($upload['name'],'#'.$upload['name'].$upload['id'],array('id'=>$upload['name'].$upload['id'],'class'=>'folder','folder_id'=>$upload['id'])).'</li><br>';
+        echo "<li style='display:none;'>".$this->Html->image('folder_icon.png',array('width'=>'50px','height'=>'50px')).$this->Html->link($upload['name'],'#uploadsTab',array('id'=>$upload['name'].$upload['id'],'class'=>'folder','folder_id'=>$upload['id'])).'</li><br>';
     }
       foreach($group['uploads'] as $upload){
         $upload=$upload['Upload'];

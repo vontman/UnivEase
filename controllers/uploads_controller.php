@@ -50,7 +50,7 @@ class UploadsController extends AppController{
         $this->set('file',$this->data);
 //        echo "   sdldjkldsjl";
 ;    }
-   function uploads_ajax($type,$group_id=0,$folder_id=0){
+   function uploads_ajax($type,$group_id=0,$folder_id=0,$back_id=0){
        $this->layout='ajax';
         $this->Upload->recursive=-1;
         $this->loadModel('UploadFolder');
@@ -67,7 +67,7 @@ class UploadsController extends AppController{
         }elseif($type=='img'){
             $group['uploads']=$this->Upload->find('all',array('conditions'=>array('Upload.type'=>array('gif','jpg','png'),'group_id'=>$group_id,'folder_id'=>$folder_id),'order'=>'Upload.name'));
         }
-        $this->set(compact(array('group','type','id','folders')));
+        $this->set(compact(array('group','folder_id','back_id','group_id','folders')));
    }
     function uploadFile($type) {
             $file = $this->data['Upload']['File'];
