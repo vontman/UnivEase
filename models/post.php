@@ -7,7 +7,6 @@ class Post extends AppModel {
     function __construct($id = false, $table = null, $ds = null) {
         parent::__construct($id, $table, $ds);
         $this->validate = array(
-            'title' => array('rule' => 'notempty', 'message' => __('Required', true)),
             'content' => array('rule' => 'notempty', 'message' => __('Required', true)),
             'publish_date' => array(
                 array('rule' => 'notEmpty', 'message' => __('Required', true)),
@@ -22,9 +21,9 @@ class Post extends AppModel {
 //The Associations below have been created with all possible keys, those that are not needed can be removed
 
     var $belongsTo = array(
-        'Course' => array(
-            'className' => 'Course',
-            'foreignKey' => 'course_id',
+        'Group' => array(
+            'className' => 'Group',
+            'foreignKey' => 'group_id',
             'conditions' => '',
             'fields' => '',
             'order' => ''

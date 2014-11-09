@@ -27,7 +27,7 @@
 <div>
     <ul class="nav nav-tabs" style="margin-left:0;" id="myTab">
         <li class="active"><a  data-toggle="tab" href="#view_posts" >Discussion</a></li>
-        <li><a data-toggle="tab" href="#users">Users</a></li>
+        <li><a data-toggle="tab" href="#group_users">Users</a></li>
         <li><a data-toggle="tab" href="#uploads">Uploads</a></li>
         <li><a data-toggle="tab" href="#group_info">Info</a></li>
         </li>
@@ -50,7 +50,7 @@
         <div id="view_posts" class="tab-pane fade in active">
 
         </div>
-        <div id="users" class="tab-pane fade in">
+        <div id="group_users" class="tab-pane fade in">
             
         </div>
         <div id="uploads" class="tab-pane fade in">

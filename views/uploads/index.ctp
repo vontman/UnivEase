@@ -37,8 +37,6 @@
                   });
                   var group_id=$('#UploadGroupId').val();
                   var add_folder_toggle=false;
-                  var counter=0;
-                  var prev_folder=[0];
                   var selected_folder=0;
                   var url="<?php echo Router::url(array('controller'=>'uploads','action'=>'uploads_ajax',$group_id)); ?>/";
                   var last_url;
@@ -48,7 +46,8 @@
                       selected_url=selected_url || last_url;
                       last_url=selected_url;
                      $('.uploads_view ul').children().slideUp('100',function(){$(this).remove();});
-                     $.post(selected_url+'/'+prev_folder[counter],{
+                     $.post(selected_url,{
+
                             uploads_type:type},
                             function(data){
                                 console.log(selected_url);
@@ -64,13 +63,10 @@
                       load_uploads(url+type+'/0/');
                   });
                   $('.uploads_view ul').delegate('.folder','click',function(){
-                      counter++;
-                      prev_folder[counter]=selected_folder;
                       selected_folder=$(this).attr('folder_id');
                       load_uploads(url+type+'/'+selected_folder);
                   });
                   $('.uploads_view ul').delegate('#back_folder','click',function(){
-                      counter--;
                       selected_folder=$(this).attr('folder_id');
                       load_uploads(url+type+'/'+selected_folder);
                   });

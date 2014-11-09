@@ -21,7 +21,9 @@ class GroupsController extends AppController {
              $this->redirect('/');
          }else{
             $users = $this->Session->read('user');
-            $check=$this->GroupUser->find('first',array('fields'=>'GroupUser.id','conditions'=>array('GroupUser.user_id'=>$users['User']['id'],'GroupUser.group_id'=>$id)));
+            $this->loadModel('CourseUser');
+            $check=$this->CourseUser->find('first',array('fields'=>'CourseUser.id','conditions'=>array('CourseUser.user_id'=>$users['User']['id'],'CourseUser.id'=>$id)));
+//            $check=$this->GroupUser->find('first',array('fields'=>'GroupUser.id','conditions'=>array('GroupUser.user_id'=>$users['User']['id'],'GroupUser.group_id'=>$id)));
             if(!$check){
                 $this->setFlash(__("u aren't registered in this group", true), 'alert alert-danger');
                 $this->redirect('/');
@@ -45,7 +47,7 @@ class GroupsController extends AppController {
     function view_posts($id=false){
         $this->loadmodel('Post');
         $this->Post->recursive = 0;
-        $posts=$this->Post->find('all',array('order' => array('Post.created DESC'),'conditions'=>array('Post.course_id'=>$id,'Post.type_id'=>1)));
+        $posts=$this->Post->find('all',array('order' => array('Post.created DESC'),'conditions'=>array('Post.group_id'=>$id,'Post.type_id'=>1)));
         $this->set(compact('posts','id'));
     }
     function add_ajax($id){
@@ -61,7 +63,7 @@ class GroupsController extends AppController {
             $this->loadmodel('Post');
             $this->Posts->recursive = 0;
 
-            $posts=$this->Post->find('all',array('order' => array('Post.created DESC'),'conditions'=>array('Post.course_id'=>$id,'Post.type_id'=>1)));
+            $posts=$this->Post->find('all',array('order' => array('Post.created DESC'),'conditions'=>array('Post.group_id'=>$id,'Post.type_id'=>1)));
             $this->set(compact('posts','id'));
         if ($this->RequestHandler->isAjax()) { //or $this->RequestHandler->isAjax() if you're in cake 1.3
                 $this->layout = 'ajax';
@@ -69,37 +71,37 @@ class GroupsController extends AppController {
             }
     }
     function add_post($id=false){
-        print_r($GLOBALS);
+        print_r($_POST);
         $this->layout = $this->autoRender = false;
         $users = $this->Session->read('user');
        $this->loadmodel('Post');
          if (!empty($_POST['data'])) {
              $data['Post']['user_id']=$users['User']['id'];
              $data['Post']['type_id']=1;
-             $data['Post']['course_id']=$id;
-             $data['Post']['content']=$_POST['data'];
+             $data['Post']['group_id']=$id;
+             $data['Post']['content']=$_POST['data']['Post']['content'];
             $this->Post->create();
             if ($this->Post->save($data)) {
                 $this->setFlash(__('New Post has been added', true), 'alert alert-success');
-                $this->redirect(array('action'=>'index',$id));
+//                $this->redirect(array('action'=>'index',$id));
             } else {
                 $this->setFlash(__('The Post could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         } 
     }
-     function users($id=false){
+     function group_users($id=false){
         $this->loadmodel('GroupUser');
         $this->GroupUser->recursive = -1;
          $this->Group->id=$id;
          if(!$id || !$this->Group->exists()){
              $this->setFlash(__("Group Doesn't Exist !!",true),'alert alert-danger');
-             $this->redirect(array('action'=>'index'));
+//             $this->redirect(array('action'=>'index'));
          }else{
             $user = $this->Session->read('user');
             $check=$this->GroupUser->find('first',array('fields'=>'GroupUser.id','conditions'=>array('GroupUser.user_id'=>$user['User']['id'],'GroupUser.group_id'=>$id)));
             if(!$check){
                 $this->setFlash(__("u aren't registered in this group", true), 'alert alert-danger');
-                $this->redirect('/');
+//                $this->redirect('/');
             }
          }
 //        $this->CourseUser->recursive = 0;

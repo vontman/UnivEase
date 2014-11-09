@@ -12,8 +12,8 @@
       foreach($group['uploads'] as $upload){
         $upload=$upload['Upload'];
         if($upload['type']=='jpg' ||$upload['type']=='png' ||$upload['type']=='gif'  ){
-        echo "<li style='display:none;'>".'<image style="max-width:50px;border:2px dashed;border-radius:5px;" src="/UnivEase/uploaded/groups/'.$upload['name'].'.'.$upload['type'].'"/>'.$this->Html->link($upload['name'],WWW_ROOT.'/UnivEase/uploaded/groups/'.$upload['name'].'.'.$upload['type']).'</li><br>';
+        echo "<li style='display:none;'>".'<image style="max-width:50px;border:2px dashed;border-radius:5px;" src="/UnivEase/uploaded/groups/'.$upload['name'].'.'.$upload['type'].'"/>'.$this->Html->link($upload['name'],array('controller'=>'uploads','action'=>'download',$upload['id'])).'</li><br>';
         }else{
-            echo "<li style='display:none;'>".$this->Html->image($upload['type'].'_icon.png',array('width'=>'50px')).$this->Html->link($upload['name'],WWW_ROOT.'/UnivEase/uploaded/groups/'.$upload['name'].'.'.$upload['type'])."</li>";
+            echo "<li style='display:none;'>".$this->Html->image($upload['type'].'_icon.png',array('width'=>'50px')).$this->Html->link($upload['name'],array('controller'=>'uploads','action'=>'download',$upload['id']))."</li>";
         }
     }
