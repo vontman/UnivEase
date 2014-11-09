@@ -17,13 +17,13 @@ class GroupsController extends AppController {
         $this->GroupUser->recursive = -1;
          $this->Group->id=$id;
          if(!$id || !$this->Group->exists($id)){
-             $this->setFlash(__("Group Doesn't Exist !!",true),'alert alert-error');
+             $this->setFlash(__("Group Doesn't Exist !!",true),'alert alert-danger');
              $this->redirect('/');
          }else{
             $users = $this->Session->read('user');
             $check=$this->GroupUser->find('first',array('fields'=>'GroupUser.id','conditions'=>array('GroupUser.user_id'=>$users['User']['id'],'GroupUser.group_id'=>$id)));
             if(!$check){
-                $this->setFlash(__("u aren't registered in this group", true), 'alert alert-error');
+                $this->setFlash(__("u aren't registered in this group", true), 'alert alert-danger');
                 $this->redirect('/');
             }
          }
@@ -55,7 +55,7 @@ class GroupsController extends AppController {
             $users = $this->Session->read('user');
             $check=$this->CourseUser->find('first',array('fields'=>'CourseUser.id','conditions'=>array('CourseUser.user_id'=>$users['User']['id'],'CourseUser.course_id'=>$id)));
             if(!$check){
-                $this->setFlash(__("u aren't registered in this course", true), 'alert alert-error');
+                $this->setFlash(__("u aren't registered in this course", true), 'alert alert-danger');
                 $this->redirect('/');
             }
             $this->loadmodel('Post');
@@ -83,7 +83,7 @@ class GroupsController extends AppController {
                 $this->setFlash(__('New Post has been added', true), 'alert alert-success');
                 $this->redirect(array('action'=>'index',$id));
             } else {
-                $this->setFlash(__('The Post could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The Post could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         } 
     }
@@ -92,13 +92,13 @@ class GroupsController extends AppController {
         $this->GroupUser->recursive = -1;
          $this->Group->id=$id;
          if(!$id || !$this->Group->exists()){
-             $this->setFlash(__("Group Doesn't Exist !!",true),'alert alert-error');
+             $this->setFlash(__("Group Doesn't Exist !!",true),'alert alert-danger');
              $this->redirect(array('action'=>'index'));
          }else{
             $user = $this->Session->read('user');
             $check=$this->GroupUser->find('first',array('fields'=>'GroupUser.id','conditions'=>array('GroupUser.user_id'=>$user['User']['id'],'GroupUser.group_id'=>$id)));
             if(!$check){
-                $this->setFlash(__("u aren't registered in this group", true), 'alert alert-error');
+                $this->setFlash(__("u aren't registered in this group", true), 'alert alert-danger');
                 $this->redirect('/');
             }
          }
@@ -127,11 +127,11 @@ class GroupsController extends AppController {
                     $this->setFlash(__('The file was uploaded successfully',true),'alert alert-success');
                     $this->redirect(array('action'=>'view',$group_id));
                 }else{
-                    $this->setFlash(__('Upload Failed',true),'alert alert-error');
+                    $this->setFlash(__('Upload Failed',true),'alert alert-danger');
                     $this->redirect(array('action'=>'view',$group_id));
                 }
             }else{
-                $this->setFlash(__('File is Too Large',true),'alert alert-error');
+                $this->setFlash(__('File is Too Large',true),'alert alert-danger');
                 $this->redirect(array('action'=>'view',$group_id));
             }
         }
@@ -168,7 +168,7 @@ class GroupsController extends AppController {
                 $this->setFlash(__('The group has been saved', true), 'alert alert-success');
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->setFlash(__('The group could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The group could not be saved. Please, try again.', true), 'alert alert-danger');
             }
             
         }
@@ -177,7 +177,7 @@ class GroupsController extends AppController {
         $this->Group->id=$id;
         $this->Group->recursive=1;
         if (!$id || !$this->Group->exists()) {
-            $this->setFlash(__('Invalid group', true),'alert alert-error');
+            $this->setFlash(__('Invalid group', true),'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }else{
             $this->loadModel('GroupUser');
@@ -194,7 +194,7 @@ class GroupsController extends AppController {
     function admin_edit($id=null){
         $this->Group->id=$id;
         if (!$id || !$this->Group->exists()) {
-            $this->setFlash(__('Invalid group', true),'alert alert-error');
+            $this->setFlash(__('Invalid group', true),'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }else{
             $this->Group->read(null,$id);
@@ -204,21 +204,21 @@ class GroupsController extends AppController {
                 $this->setFlash(__('The group has been saved', true), 'alert alert-success');
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->setFlash(__('The group could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The group could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
     }
     function admin_delete($id = null) {
         $this->Group->id=$id;
         if (!$id || !$this->Group->exists()) {
-            $this->setFlash(__('Invalid id for group', true), 'alert alert-error');
+            $this->setFlash(__('Invalid id for group', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }else{
             if ($this->Group->delete($id)) {
                 $this->setFlash(__('Group deleted', true));
                 $this->redirect(array('action' => 'index'));
             }else{
-                $this->setFlash(__('Group was not deleted', true), 'alert alert-error');
+                $this->setFlash(__('Group was not deleted', true), 'alert alert-danger');
                 $this->redirect(array('action' => 'index'));
             }
         }

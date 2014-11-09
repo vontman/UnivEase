@@ -34,7 +34,7 @@ class PostsController extends AppController {
                 $this->setFlash(__('New Post has been added', true), 'alert alert-success');
                 $this->redirect(array('action'=>'index',$id));
             } else {
-                $this->setFlash(__('The Post could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The Post could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         } 
     }

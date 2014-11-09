@@ -35,7 +35,11 @@
     <script>
         $('#myTab a').click(function(){
             var trgt=$(this).attr('href');
-            $(trgt).load("<?php echo Router::url(array('controller' => 'groups')) ;?>/"+trgt.substring(1)+"/<?php echo $id;?>");
+            if(trgt=='#uploads'){
+                $(trgt).load("<?php echo Router::url(array('controller' => 'uploads','action'=>'index',$id)) ;?>/");
+            }else{
+                $(trgt).load("<?php echo Router::url(array('controller' => 'groups')) ;?>/"+trgt.substring(1)+"/<?php echo $id;?>");
+            }
         });            
         setTimeout(function(){   
             $('#myTab a[href="#view_posts"]').trigger('click');

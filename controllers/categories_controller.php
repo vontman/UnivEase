@@ -35,7 +35,7 @@ class CategoriesController extends AppController {
                 $this->setFlash(__('The Category has been saved', true), 'alert alert-success');
                 
             } else {
-                $this->setFlash(__('The Category could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The Category could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
         if (empty($this->data)) {
@@ -54,7 +54,7 @@ class CategoriesController extends AppController {
 
     function admin_edit($id = null) {
         if (!$id && empty($this->data)) {
-            $this->setFlash(__('Invalid Category', true), 'alert alert-error');
+            $this->setFlash(__('Invalid Category', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         if (!empty($this->data)) {
@@ -66,7 +66,7 @@ class CategoriesController extends AppController {
                     $this->redirect(array('controller' => 'categories', 'action' => 'view', $this->data['Category']['parent_id']));
                 }
             } else {
-                $this->setFlash(__('The Category could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The Category could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
         if (empty($this->data)) {
@@ -79,14 +79,14 @@ class CategoriesController extends AppController {
 
     function admin_delete($id = null) {
         if (!$id) {
-            $this->setFlash(__('Invalid id for Category', true), 'alert alert-error');
+            $this->setFlash(__('Invalid id for Category', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         if ($this->Category->delete($id)) {
             $this->setFlash(__('Category deleted', true), 'alert alert-success');
             $this->redirect($this->referer());
         }
-        $this->setFlash(__('The Category could not be deleted. Please, try again.', true), 'alert alert-error');
+        $this->setFlash(__('The Category could not be deleted. Please, try again.', true), 'alert alert-danger');
         $this->redirect($this->referer());
     }
 
@@ -97,7 +97,7 @@ class CategoriesController extends AppController {
             if ($this->Category->deleteAll(array('Category.id' => $ids))) {
                 $this->setFlash('Category deleted successfully', 'alert alert-success');
             } else {
-                $this->setFlash('Category can not be deleted', 'alert alert-error');
+                $this->setFlash('Category can not be deleted', 'alert alert-danger');
             }
         }
         $this->redirect($this->referer());

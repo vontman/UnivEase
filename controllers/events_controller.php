@@ -117,7 +117,7 @@ class EventsController extends AppController {
                 $this->setFlash(__('The event has been saved', true), 'alert alert-success');
                 $this->redirect(array('action' => 'index', $this->data['Event']['course_id']/*, '?' => array('level' => $this->data['Event']['level'])*/));
             } else {
-                $this->setFlash(__('The event could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The event could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
         if (empty($this->data)) {
@@ -159,7 +159,7 @@ class EventsController extends AppController {
                 $this->setFlash(__('The event has been saved', true), 'alert alert-success');
                 $this->redirect(array('action' => 'index', $this->data['Event']['course_id']/*, '?' => array('level' => $this->data['Event']['level'])*/));
             } else {
-                $this->setFlash(__('The event could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The event could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
         if (empty($this->data)) {
@@ -211,7 +211,7 @@ class EventsController extends AppController {
 
     function edit($id = null) {
         if (!$id && empty($this->data)) {
-            $this->setFlash(__('Invalid event', true), 'alert alert-error');
+            $this->setFlash(__('Invalid event', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         $event = $this->Event->read(null, $id);
@@ -221,7 +221,7 @@ class EventsController extends AppController {
                 $this->setFlash(__('The event has been saved', true), 'alert alert-success');
                 $this->redirect(array('action' => 'index', $user['CourseUser']['course_id']/*, '?' => array('level' => $this->data['Event']['level'])*/));
             } else {
-                $this->setFlash(__('The event could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The event could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
         if (empty($this->data)) {
@@ -232,7 +232,7 @@ class EventsController extends AppController {
     }
     function admin_edit($id = null) {
         if (!$id && empty($this->data)) {
-            $this->setFlash(__('Invalid event', true), 'alert alert-error');
+            $this->setFlash(__('Invalid event', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         $event = $this->Event->read(null, $id);
@@ -242,7 +242,7 @@ class EventsController extends AppController {
                 $this->setFlash(__('The event has been saved', true), 'alert alert-success');
                 $this->redirect(array('action' => 'index', $event['Event']['course_id']/*, '?' => array('level' => $this->data['Event']['level'])*/));
             } else {
-                $this->setFlash(__('The event could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The event could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
         if (empty($this->data)) {
@@ -254,7 +254,7 @@ class EventsController extends AppController {
 
     function delete($id = null) {
         if (!$id) {
-            $this->setFlash(__('Invalid id for event', true), 'alert alert-error');
+            $this->setFlash(__('Invalid id for event', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         $event = $this->Event->read(null, $id);
@@ -263,12 +263,12 @@ class EventsController extends AppController {
             $this->setFlash(__('Event deleted', true), 'alert alert-success');
             $this->redirect(array('action' => 'index', $event['Event']['course_id']/*, '?' => array('level' => $event['Event']['level'])*/));
         }
-        $this->setFlash(__('Event was not deleted', true), 'alert alert-error');
+        $this->setFlash(__('Event was not deleted', true), 'alert alert-danger');
         $this->redirect(array('action' => 'index'));
     }
     function admin_delete($id = null) {
         if (!$id) {
-            $this->setFlash(__('Invalid id for event', true), 'alert alert-error');
+            $this->setFlash(__('Invalid id for event', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         $event = $this->Event->read(null, $id);
@@ -277,7 +277,7 @@ class EventsController extends AppController {
             $this->setFlash(__('Event deleted', true), 'alert alert-success');
             $this->redirect(array('action' => 'index', $event['Event']['course_id']/*, '?' => array('level' => $event['Event']['level'])*/));
         }
-        $this->setFlash(__('Event was not deleted', true), 'alert alert-error');
+        $this->setFlash(__('Event was not deleted', true), 'alert alert-danger');
         $this->redirect(array('action' => 'index'));
     }
 

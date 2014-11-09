@@ -190,7 +190,7 @@ class CourseUsersController extends AppController {
                      if ($this->CourseUser->save($this->data)) {
                             $this->setFlash(__('The teacher has been added', true), 'alert alert-success');
                         } else {
-                            $this->setFlash(__('The teacher could not be added. Please, try again.', true), 'alert alert-error');
+                            $this->setFlash(__('The teacher could not be added. Please, try again.', true), 'alert alert-danger');
                         }
                 }
                 else{
@@ -201,9 +201,9 @@ class CourseUsersController extends AppController {
 
                     $request = $this->CourseUser->find('first', array('recursive' => -1,'fields' => 'CourseUser.user_id,CourseUser.course_id,CourseUser.status', 'conditions' => array('CourseUser.course_id =' . $allowed_courses['Course']['pre'] . ' AND CourseUser.user_id =' . $this->data['CourseUser']['user_id'])));
                     if ($request['CourseUser']['status'] == 0) {
-                        $this->setFlash(__('You have to succed in the pre request.', true), 'alert alert-error');
+                        $this->setFlash(__('You have to succed in the pre request.', true), 'alert alert-danger');
                     } elseif ($check['CourseUser']['user_id'] == $this->data['CourseUser']['user_id']) {
-                        $this->setFlash(__('You already enrolled .', true), 'alert alert-error');
+                        $this->setFlash(__('You already enrolled .', true), 'alert alert-danger');
                     } else {
                         // foreach ($this->data['CourseUser']['user_id'] as $user_id) {
                         // $this->CourseUser->create();
@@ -212,17 +212,17 @@ class CourseUsersController extends AppController {
                         if ($this->CourseUser->save($this->data)) {
                             $this->setFlash(__('The course user has been savsed', true), 'alert alert-success');
                         } else {
-                            $this->setFlash(__('The course user could not be saved. Please, try again.', true), 'alert alert-error');
+                            $this->setFlash(__('The course user could not be saved. Please, try again.', true), 'alert alert-danger');
                         }
                     }
                 } else {
                     if ($check['CourseUser']['user_id'] == $this->data['CourseUser']['user_id']) {
-                        $this->setFlash(__('You already enrolled .', true), 'alert alert-error');
+                        $this->setFlash(__('You already enrolled .', true), 'alert alert-danger');
                     } else {
                         if ($this->CourseUser->save($this->data)) {
                             $this->setFlash(__('The course user has been savsed', true), 'alert alert-success');
                         } else {
-                            $this->setFlash(__('The course user could not be saved. Please, try again.', true), 'alert alert-error');
+                            $this->setFlash(__('The course user could not be saved. Please, try again.', true), 'alert alert-danger');
                         }
                     }
                 }
@@ -230,7 +230,7 @@ class CourseUsersController extends AppController {
 
                 $this->redirect(array('action' => 'index', $this->data['CourseUser']['course_id']));
             } else {
-                $this->setFlash(__('Please choose at least one user to be enrolled in course, try again.', true), 'alert alert-error');
+                $this->setFlash(__('Please choose at least one user to be enrolled in course, try again.', true), 'alert alert-danger');
             }
         }
         if (empty($this->data)) {
@@ -263,7 +263,7 @@ class CourseUsersController extends AppController {
                      if ($this->CourseUser->save($this->data)) {
                             $this->setFlash(__('The teacher has been added', true), 'alert alert-success');
                         } else {
-                            $this->setFlash(__('The teacher could not be added. Please, try again.', true), 'alert alert-error');
+                            $this->setFlash(__('The teacher could not be added. Please, try again.', true), 'alert alert-danger');
                         }
                 }
                 else{
@@ -274,9 +274,9 @@ class CourseUsersController extends AppController {
 
                     $request = $this->CourseUser->find('first', array('recursive' => -1,'fields' => 'CourseUser.user_id,CourseUser.course_id,CourseUser.status', 'conditions' => array('CourseUser.course_id =' . $allowed_courses['Course']['pre'] . ' AND CourseUser.user_id =' . $this->data['CourseUser']['user_id'])));
                     if ($request['CourseUser']['status'] == 0) {
-                        $this->setFlash(__('You have to succed in the pre request.', true), 'alert alert-error');
+                        $this->setFlash(__('You have to succed in the pre request.', true), 'alert alert-danger');
                     } elseif ($check['CourseUser']['user_id'] == $this->data['CourseUser']['user_id']) {
-                        $this->setFlash(__('You already enrolled .', true), 'alert alert-error');
+                        $this->setFlash(__('You already enrolled .', true), 'alert alert-danger');
                     } else {
                         // foreach ($this->data['CourseUser']['user_id'] as $user_id) {
                         // $this->CourseUser->create();
@@ -285,17 +285,17 @@ class CourseUsersController extends AppController {
                         if ($this->CourseUser->save($this->data)) {
                             $this->setFlash(__('The course user has been savsed', true), 'alert alert-success');
                         } else {
-                            $this->setFlash(__('The course user could not be saved. Please, try again.', true), 'alert alert-error');
+                            $this->setFlash(__('The course user could not be saved. Please, try again.', true), 'alert alert-danger');
                         }
                     }
                 } else {
                     if ($check['CourseUser']['user_id'] == $this->data['CourseUser']['user_id']) {
-                        $this->setFlash(__('You already enrolled .', true), 'alert alert-error');
+                        $this->setFlash(__('You already enrolled .', true), 'alert alert-danger');
                     } else {
                         if ($this->CourseUser->save($this->data)) {
                             $this->setFlash(__('The course user has been savsed', true), 'alert alert-success');
                         } else {
-                            $this->setFlash(__('The course user could not be saved. Please, try again.', true), 'alert alert-error');
+                            $this->setFlash(__('The course user could not be saved. Please, try again.', true), 'alert alert-danger');
                         }
                     }
                 }
@@ -303,7 +303,7 @@ class CourseUsersController extends AppController {
 
                 $this->redirect(array('action' => 'index', $this->data['CourseUser']['course_id']));
             } else {
-                $this->setFlash(__('Please choose at least one user to be enrolled in course, try again.', true), 'alert alert-error');
+                $this->setFlash(__('Please choose at least one user to be enrolled in course, try again.', true), 'alert alert-danger');
             }
         }
         if (empty($this->data)) {
@@ -321,7 +321,7 @@ class CourseUsersController extends AppController {
 
     function admin_edit($id = null) {
         if (!$id && empty($this->data)) {
-            $this->setFlash(__('Invalid course user', true), 'alert alert-error');
+            $this->setFlash(__('Invalid course user', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         $course_user = $this->CourseUser->read(null, $id);
@@ -331,7 +331,7 @@ class CourseUsersController extends AppController {
                 $this->setFlash(__('The course user has been saved', true), 'alert alert-success');
                 $this->redirect(array('action' => 'index', $this->data['CourseUser']['course_id']));
             } else {
-                $this->setFlash(__('The course user could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The course user could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
         if (empty($this->data)) {
@@ -345,7 +345,7 @@ class CourseUsersController extends AppController {
 
     function edit($id = false) {
         if (!$id && empty($this->data)) {
-            $this->setFlash(__('Invalid course user', true), 'alert alert-error');
+            $this->setFlash(__('Invalid course user', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         $course_user = $this->CourseUser->read(null, $id);
@@ -355,7 +355,7 @@ class CourseUsersController extends AppController {
                 $this->setFlash(__('The course user has been saved', true), 'alert alert-success');
                 $this->redirect(array('action' => 'index', $this->data['CourseUser']['course_id']));
             } else {
-                $this->setFlash(__('The course user could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The course user could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
 
@@ -400,7 +400,7 @@ class CourseUsersController extends AppController {
             $this->redirect(array('controller'=>'course_users','action' => 'index',$course_id));
             
         } else {
-            $this->setFlash(__("The student couldn't approved", true), 'alert alert-error');
+            $this->setFlash(__("The student couldn't approved", true), 'alert alert-danger');
         }
      }
         function approved($course_id=false){
@@ -419,7 +419,7 @@ class CourseUsersController extends AppController {
             $this->redirect(array('controller'=>'course_users','action' => 'index',$course_id));
             
         } else {
-            $this->setFlash(__("The student couldn't approved", true), 'alert alert-error');
+            $this->setFlash(__("The student couldn't approved", true), 'alert alert-danger');
         }
     }
     function student_add($user_id=false){
@@ -446,9 +446,9 @@ class CourseUsersController extends AppController {
 
                     $request = $this->CourseUser->find('first', array('fields' => 'CourseUser.user_id,CourseUser.course_id,CourseUser.status', 'conditions' => array('CourseUser.course_id =' . $allowed_courses['Course']['pre'] . ' AND CourseUser.user_id =' . $this->data['CourseUser']['user_id'])));
                     if ($request['CourseUser']['status'] == 0) {
-                        $this->setFlash(__('You have to successed in the pre request.', true), 'alert alert-error');
+                        $this->setFlash(__('You have to successed in the pre request.', true), 'alert alert-danger');
                     } elseif ($check['CourseUser']['user_id'] == $this->data['CourseUser']['user_id']) {
-                        $this->setFlash(__('You already enrolled .', true), 'alert alert-error');
+                        $this->setFlash(__('You already enrolled .', true), 'alert alert-danger');
                     } else {
                         // foreach ($this->data['CourseUser']['user_id'] as $user_id) {
                         // $this->CourseUser->create();
@@ -458,12 +458,12 @@ class CourseUsersController extends AppController {
                             
                             $this->setFlash(__('The course user has been savsed', true), 'alert alert-success');
                         } else {
-                            $this->setFlash(__('The course user could not be saved. Please, try again.', true), 'alert alert-error');
+                            $this->setFlash(__('The course user could not be saved. Please, try again.', true), 'alert alert-danger');
                         }
                     }
                 } else {
                     if ($check['CourseUser']['user_id'] == $this->data['CourseUser']['user_id']) {
-                        $this->setFlash(__('You already enrolled .', true), 'alert alert-error');
+                        $this->setFlash(__('You already enrolled .', true), 'alert alert-danger');
                     } else {
                         if ($this->CourseUser->save($this->data)) {
                             $lid=$this->CourseUser->getLastInsertId(); 
@@ -471,7 +471,7 @@ class CourseUsersController extends AppController {
                             
                             $this->setFlash(__('The course user has been savsed', true), 'alert alert-success');
                         } else {
-                            $this->setFlash(__('The course user could not be saved. Please, try again.', true), 'alert alert-error');
+                            $this->setFlash(__('The course user could not be saved. Please, try again.', true), 'alert alert-danger');
                         }
                     }
                 }
@@ -479,7 +479,7 @@ class CourseUsersController extends AppController {
 
                 $this->redirect(array('action' => 'student_add', $this->data['CourseUser']['course_id']));
             } else {
-                $this->setFlash(__('Please choose at least one user to be enrolled in course, try again.', true), 'alert alert-error');
+                $this->setFlash(__('Please choose at least one user to be enrolled in course, try again.', true), 'alert alert-danger');
             }
         }
       
@@ -488,7 +488,7 @@ class CourseUsersController extends AppController {
     }
     function delete($id = null) {
         if (!$id) {
-            $this->setFlash(__('Invalid id for course user', true), 'alert alert-error');
+            $this->setFlash(__('Invalid id for course user', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         $course_user = $this->CourseUser->read(null, $id);
@@ -516,13 +516,13 @@ class CourseUsersController extends AppController {
             $this->setFlash(__('Course user deleted', true), 'alert alert-success');
             $this->redirect(array('action' => 'index', $course_user['CourseUser']['course_id']));
         }
-        $this->setFlash(__('Course user was not deleted', true), 'alert alert-error');
+        $this->setFlash(__('Course user was not deleted', true), 'alert alert-danger');
         $this->redirect(array('action' => 'index', $course_user['CourseUser']['course_id']));
     }
 
     function admin_delete($id = null) {
         if (!$id) {
-            $this->setFlash(__('Invalid id for course user', true), 'alert alert-error');
+            $this->setFlash(__('Invalid id for course user', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         $course_user = $this->CourseUser->read(null, $id);
@@ -550,7 +550,7 @@ class CourseUsersController extends AppController {
             $this->setFlash(__('Course user deleted', true), 'alert alert-success');
             $this->redirect(array('action' => 'index', $course_user['CourseUser']['course_id']));
         }
-        $this->setFlash(__('Course user was not deleted', true), 'alert alert-error');
+        $this->setFlash(__('Course user was not deleted', true), 'alert alert-danger');
         $this->redirect(array('action' => 'index'));
     }
 
@@ -565,7 +565,7 @@ class CourseUsersController extends AppController {
             if ($this->CourseUser->deleteAll(array('CourseUser.id' => $ids))) {
                 $this->setFlash(__('Course user deleted alert alert-successfully', true), 'alert alert-success');
             } else {
-                $this->setFlash(__('Course user can not be deleted', true), 'alert alert-error');
+                $this->setFlash(__('Course user can not be deleted', true), 'alert alert-danger');
             }
         } elseif ($operation == 'message') {
             $users_ids = $this->CourseUser->find("list", array("fields" => array("CourseUser.user_id", "CourseUser.user_id"), "conditions" => array("CourseUser.id" => $this->params['form']["chk"])));

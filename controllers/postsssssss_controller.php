@@ -45,7 +45,7 @@ class PostsController extends AppController {
                 $this->setFlash(__('The post has been saved', true), 'alert alert-success');
                 $this->redirect(array('action' => 'index', $course_id, '?' => array('level' => $_GET['level'])));
             } else {
-                $this->setFlash(__('The post could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The post could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
         $this->set('course_id', $course_id);
@@ -53,7 +53,7 @@ class PostsController extends AppController {
 
     function edit($id = null) {
         if (!$id && empty($this->data)) {
-            $this->setFlash(__('Invalid post', true), 'alert alert-error');
+            $this->setFlash(__('Invalid post', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         $post = $this->Post->read(null, $id);
@@ -63,7 +63,7 @@ class PostsController extends AppController {
                 $this->setFlash(__('The post has been saved', true), 'alert alert-success');
                 $this->redirect(array('action' => 'index', $post['Post']['course_id'], '?' => array('level' => $post['Post']['level'])));
             } else {
-                $this->setFlash(__('The post could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The post could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
         if (empty($this->data)) {
@@ -76,7 +76,7 @@ class PostsController extends AppController {
 
     function delete($id = null) {
         if (!$id) {
-            $this->setFlash(__('Invalid id for post', true), 'alert alert-error');
+            $this->setFlash(__('Invalid id for post', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         $post = $this->Post->read(null, $id);
@@ -84,7 +84,7 @@ class PostsController extends AppController {
             $this->setFlash(__('Post deleted', true), 'alert alert-success');
             $this->redirect(array('action' => 'index', $post['Post']['course_id'], '?' => array('level' => $post['Post']['level'])));
         }
-        $this->setFlash(__('Post was not deleted', true), 'alert alert-error');
+        $this->setFlash(__('Post was not deleted', true), 'alert alert-danger');
         $this->redirect(array('action' => 'index'));
     }
 
@@ -95,7 +95,7 @@ class PostsController extends AppController {
             if ($this->Post->deleteAll(array('Post.id' => $ids))) {
                 $this->setFlash(__('Post deleted successfully', true), 'alert alert-success');
             } else {
-                $this->setFlash(__('Post can not be deleted', true), 'alert alert-error');
+                $this->setFlash(__('Post can not be deleted', true), 'alert alert-danger');
             }
         }
         $this->redirect($this->referer());
@@ -134,7 +134,7 @@ class PostsController extends AppController {
                 $this->setFlash(__('The post has been saved', true), 'alert alert-success');
                 $this->redirect(array('action' => 'index', $course_id, '?' => array('level' => $_GET['level'])));
             } else {
-                $this->setFlash(__('The post could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The post could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
         $this->set('course_id', $course_id);
@@ -142,7 +142,7 @@ class PostsController extends AppController {
 
     function admin_edit($id = null) {
         if (!$id && empty($this->data)) {
-            $this->setFlash(__('Invalid post', true), 'alert alert-error');
+            $this->setFlash(__('Invalid post', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         if (!empty($this->data)) {
@@ -150,7 +150,7 @@ class PostsController extends AppController {
                 $this->setFlash(__('The post has been saved', true), 'alert alert-success');
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->setFlash(__('The post could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The post could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
         if (empty($this->data)) {
@@ -163,14 +163,14 @@ class PostsController extends AppController {
 
     function admin_delete($id = null) {
         if (!$id) {
-            $this->setFlash(__('Invalid id for post', true), 'alert alert-error');
+            $this->setFlash(__('Invalid id for post', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         if ($this->Post->delete($id)) {
             $this->setFlash(__('Post deleted', true), 'alert alert-success');
             $this->redirect(array('action' => 'index'));
         }
-        $this->setFlash(__('Post was not deleted', true), 'alert alert-error');
+        $this->setFlash(__('Post was not deleted', true), 'alert alert-danger');
         $this->redirect(array('action' => 'index'));
     }
 
@@ -181,7 +181,7 @@ class PostsController extends AppController {
             if ($this->Post->deleteAll(array('Post.id' => $ids))) {
                 $this->setFlash(__('Post deleted successfully', true), 'alert alert-success');
             } else {
-                $this->setFlash(__('Post can not be deleted', true), 'alert alert-error');
+                $this->setFlash(__('Post can not be deleted', true), 'alert alert-danger');
             }
         }
         $this->redirect(array('action' => 'index'));

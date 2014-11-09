@@ -33,7 +33,7 @@ class VirtualClassroomsController extends AppController {
                 $this->setFlash(__('The virtual classroom has been saved', true), 'alert alert-success');
                 $this->redirect(array('action' => 'index', $this->data['VirtualClassroom']['course_id'], '?' => array('level' => $this->data['VirtualClassroom']['level_id'])));
             } else {
-                $this->setFlash(__('The virtual classroom could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The virtual classroom could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
         $this->set('course_id', $course_id);
@@ -41,7 +41,7 @@ class VirtualClassroomsController extends AppController {
 
     function admin_edit($id = null) {
         if (!$id && empty($this->data)) {
-            $this->setFlash(__('Invalid virtual classroom', true), 'alert alert-error');
+            $this->setFlash(__('Invalid virtual classroom', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         $classroom = $this->VirtualClassroom->read(null, $id);
@@ -51,7 +51,7 @@ class VirtualClassroomsController extends AppController {
                 $this->setFlash(__('The virtual classroom has been saved', true), 'alert alert-success');
                 $this->redirect(array('action' => 'index', $classroom['VirtualClassroom']['course_id'], '?' => array('level' => $classroom['VirtualClassroom']['level_id'])));
             } else {
-                $this->setFlash(__('The virtual classroom could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The virtual classroom could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
         if (empty($this->data)) {
@@ -63,7 +63,7 @@ class VirtualClassroomsController extends AppController {
 
     function admin_delete($id = null) {
         if (!$id) {
-            $this->setFlash(__('Invalid id for virtual classroom', true), 'alert alert-error');
+            $this->setFlash(__('Invalid id for virtual classroom', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         $classroom = $this->VirtualClassroom->read(null, $id);
@@ -71,7 +71,7 @@ class VirtualClassroomsController extends AppController {
             $this->setFlash(__('Virtual classroom deleted', true), 'alert alert-success');
             $this->redirect(array('action' => 'index', $classroom['VirtualClassroom']['course_id'], '?' => array('level' => $classroom['VirtualClassroom']['level_id'])));
         }
-        $this->setFlash(__('Virtual classroom was not deleted', true), 'alert alert-error');
+        $this->setFlash(__('Virtual classroom was not deleted', true), 'alert alert-danger');
         $this->redirect(array('action' => 'index', $classroom['VirtualClassroom']['course_id'], '?' => array('level' => $classroom['VirtualClassroom']['level_id'])));
     }
 
@@ -82,7 +82,7 @@ class VirtualClassroomsController extends AppController {
             if ($this->VirtualClassroom->deleteAll(array('VirtualClassroom.id' => $ids))) {
                 $this->setFlash(__('Virtual classroom deleted successfully', true), 'alert alert-success');
             } else {
-                $this->setFlash(__('Virtual classroom can not be deleted', true), 'alert alert-error');
+                $this->setFlash(__('Virtual classroom can not be deleted', true), 'alert alert-danger');
             }
         }
         $this->redirect($this->referer());
@@ -113,7 +113,7 @@ class VirtualClassroomsController extends AppController {
                 $this->setFlash(__('The virtual classroom has been saved', true), 'alert alert-success');
                 $this->redirect(array('action' => 'index', $this->data['VirtualClassroom']['course_id'], '?' => array('level' => $this->data['VirtualClassroom']['level_id'])));
             } else {
-                $this->setFlash(__('The virtual classroom could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The virtual classroom could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
         $this->set('course_id', $course_id);
@@ -121,7 +121,7 @@ class VirtualClassroomsController extends AppController {
 
     function edit($id = null) {
         if (!$id && empty($this->data)) {
-            $this->setFlash(__('Invalid virtual classroom', true), 'alert alert-error');
+            $this->setFlash(__('Invalid virtual classroom', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         $classroom = $this->VirtualClassroom->read(null, $id);
@@ -131,7 +131,7 @@ class VirtualClassroomsController extends AppController {
                 $this->setFlash(__('The virtual classroom has been saved', true), 'alert alert-success');
                 $this->redirect(array('action' => 'index', $classroom['VirtualClassroom']['course_id'], '?' => array('level' => $classroom['VirtualClassroom']['level_id'])));
             } else {
-                $this->setFlash(__('The virtual classroom could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The virtual classroom could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
         if (empty($this->data)) {
@@ -143,7 +143,7 @@ class VirtualClassroomsController extends AppController {
 
     function delete($id = null) {
         if (!$id) {
-            $this->setFlash(__('Invalid id for virtual classroom', true), 'alert alert-error');
+            $this->setFlash(__('Invalid id for virtual classroom', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         $classroom = $this->VirtualClassroom->read(null, $id);
@@ -151,7 +151,7 @@ class VirtualClassroomsController extends AppController {
             $this->setFlash(__('Virtual classroom deleted', true), 'alert alert-success');
             $this->redirect(array('action' => 'index', $classroom['VirtualClassroom']['course_id'], '?' => array('level' => $classroom['VirtualClassroom']['level_id'])));
         }
-        $this->setFlash(__('Virtual classroom was not deleted', true), 'alert alert-error');
+        $this->setFlash(__('Virtual classroom was not deleted', true), 'alert alert-danger');
         $this->redirect(array('action' => 'index', $classroom['VirtualClassroom']['course_id'], '?' => array('level' => $classroom['VirtualClassroom']['level_id'])));
     }
 
@@ -162,7 +162,7 @@ class VirtualClassroomsController extends AppController {
             if ($this->VirtualClassroom->deleteAll(array('VirtualClassroom.id' => $ids))) {
                 $this->setFlash(__('Virtual classroom deleted successfully', true), 'alert alert-success');
             } else {
-                $this->setFlash(__('Virtual classroom can not be deleted', true), 'alert alert-error');
+                $this->setFlash(__('Virtual classroom can not be deleted', true), 'alert alert-danger');
             }
         }
         $this->redirect($this->referer());

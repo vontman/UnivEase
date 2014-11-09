@@ -86,7 +86,7 @@ class MessagesController extends AppController {
         $user_details = $this->User->read(null, $receiver_id);
         if (empty($user_details) && empty($users_ids)) {
             $this->redirect(array("controller" => "users", 'action' => 'index'));
-            $this->setFlash(__('Please select user.', true), 'alert alert-error');
+            $this->setFlash(__('Please select user.', true), 'alert alert-danger');
         }
         $userAccount = $this->config["sms_username"];
         $passAccount = $this->config["sms_password"];
@@ -106,7 +106,7 @@ class MessagesController extends AppController {
                         
                     } else {
                         $error = true;
-                        $this->setFlash(__('The message could not be saved. Please, try again.', true), 'alert alert-error');
+                        $this->setFlash(__('The message could not be saved. Please, try again.', true), 'alert alert-danger');
                         break;
                     }
                 }
@@ -121,7 +121,7 @@ class MessagesController extends AppController {
                     $this->setFlash(__('The message has been sent', true), 'alert alert-success');
                     $this->redirect(array('action' => 'index'));
                 } else {
-                    $this->setFlash(__('The message could not be saved. Please, try again.', true), 'alert alert-error');
+                    $this->setFlash(__('The message could not be saved. Please, try again.', true), 'alert alert-danger');
                 }
             }
             $this->set('receiver_id', $receiver_id);
@@ -158,7 +158,7 @@ class MessagesController extends AppController {
                         $this->setFlash(__('The message has been sent', true), 'alert alert-success');
                     } else {
                         $error = true;
-                        $this->setFlash(__('The message could not be saved. Please, try again.', true), 'alert alert-error');
+                        $this->setFlash(__('The message could not be saved. Please, try again.', true), 'alert alert-danger');
                         break;
                     }
                 }
@@ -181,7 +181,7 @@ class MessagesController extends AppController {
         $user_details = $this->User->read(null, $receiver_id);
         if (empty($user_details) && empty($users_ids)) {
             $this->redirect(array("controller" => "users", 'action' => 'index'));
-            $this->setFlash(__('Please select user.', true), 'alert alert-error');
+            $this->setFlash(__('Please select user.', true), 'alert alert-danger');
         }
         $userAccount = $this->config["sms_username"];
         $passAccount = $this->config["sms_password"];
@@ -201,7 +201,7 @@ class MessagesController extends AppController {
                         
                     } else {
                         $error = true;
-                        $this->setFlash(__('The message could not be saved. Please, try again.', true), 'alert alert-error');
+                        $this->setFlash(__('The message could not be saved. Please, try again.', true), 'alert alert-danger');
                         break;
                     }
                 }
@@ -216,7 +216,7 @@ class MessagesController extends AppController {
                     $this->setFlash(__('The message has been sent', true), 'alert alert-success');
                     $this->redirect(array('action' => 'index'));
                 } else {
-                    $this->setFlash(__('The message could not be saved. Please, try again.', true), 'alert alert-error');
+                    $this->setFlash(__('The message could not be saved. Please, try again.', true), 'alert alert-danger');
                 }
             }
             $this->set('receiver_id', $receiver_id);
@@ -270,7 +270,7 @@ class MessagesController extends AppController {
         }
         if (empty($user_details)) {
             $this->redirect(array("controller" => "users", 'action' => 'index'));
-            $this->setFlash(__('Please select user.', true), 'alert alert-error');
+            $this->setFlash(__('Please select user.', true), 'alert alert-danger');
         }
         //debug($this->config);
         
@@ -288,10 +288,10 @@ class MessagesController extends AppController {
                     $this->setFlash(__('The message has been sent', true), 'alert alert-success');
                     $this->redirect(array("controller" => "users", 'action' => 'index'));
                 } else {
-                    $this->setFlash($this->msg_res($msg_sent), 'alert alert-error');
+                    $this->setFlash($this->msg_res($msg_sent), 'alert alert-danger');
                 }
             } else {
-                $this->setFlash(__('The message could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The message could not be saved. Please, try again.', true), 'alert alert-danger');
             }
             $this->set('receiver_id', $receiver_id);
         }
@@ -303,7 +303,7 @@ class MessagesController extends AppController {
 
     function reply($id = false) {
         if (!$id && empty($this->data)) {
-            $this->setFlash(__('Invalid id for message', true), 'alert alert-error');
+            $this->setFlash(__('Invalid id for message', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         $user = $this->is_user();
@@ -319,7 +319,7 @@ class MessagesController extends AppController {
                 $this->setFlash(__('The message has been sent', true), 'alert alert-success');
                 $this->redirect(array('action' => 'index', '#' => 'sent'));
             } else {
-                $this->setFlash(__('The message could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The message could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
         $this->set('message', $message);
@@ -327,7 +327,7 @@ class MessagesController extends AppController {
 
     function admin_reply($id = false) {
         if (!$id && empty($this->data)) {
-            $this->setFlash(__('Invalid id for message', true), 'alert alert-error');
+            $this->setFlash(__('Invalid id for message', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         $user = $this->is_admin();
@@ -343,7 +343,7 @@ class MessagesController extends AppController {
                 $this->setFlash(__('The message has been sent', true), 'alert alert-success');
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->setFlash(__('The message could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The message could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
         $this->set('message', $message);
@@ -351,27 +351,27 @@ class MessagesController extends AppController {
 
     function delete($id = null) {
         if (!$id) {
-            $this->setFlash(__('Invalid id for message', true), 'alert alert-error');
+            $this->setFlash(__('Invalid id for message', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         if ($this->Message->delete($id)) {
             $this->setFlash(__('Message deleted', true), 'alert alert-success');
             $this->redirect(array('action' => 'index'));
         }
-        $this->setFlash(__('Message was not deleted', true), 'alert alert-error');
+        $this->setFlash(__('Message was not deleted', true), 'alert alert-danger');
         $this->redirect(array('action' => 'index'));
     }
 
     function admin_delete($id = null) {
         if (!$id) {
-            $this->setFlash(__('Invalid id for message', true), 'alert alert-error');
+            $this->setFlash(__('Invalid id for message', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         if ($this->Message->delete($id)) {
             $this->setFlash(__('Message deleted', true), 'alert alert-success');
             $this->redirect(array('action' => 'index'));
         }
-        $this->setFlash(__('Message was not deleted', true), 'alert alert-error');
+        $this->setFlash(__('Message was not deleted', true), 'alert alert-danger');
         $this->redirect(array('action' => 'index'));
     }
 
@@ -382,7 +382,7 @@ class MessagesController extends AppController {
             if ($this->Message->deleteAll(array('Message.id' => $ids))) {
                 $this->setFlash(__('Message deleted alert alert-successfully', true), 'alert alert-success');
             } else {
-                $this->setFlash(__('Message can not be deleted', true), 'alert alert-error');
+                $this->setFlash(__('Message can not be deleted', true), 'alert alert-danger');
             }
         }
         $this->redirect(array('action' => 'index'));
@@ -395,7 +395,7 @@ class MessagesController extends AppController {
             if ($this->Message->deleteAll(array('Message.id' => $ids))) {
                 $this->setFlash(__('Message deleted alert alert-successfully', true), 'alert alert-success');
             } else {
-                $this->setFlash(__('Message can not be deleted', true), 'alert alert-error');
+                $this->setFlash(__('Message can not be deleted', true), 'alert alert-danger');
             }
         }
         $this->redirect(array('action' => 'index'));

@@ -89,10 +89,10 @@ class UsersController extends AppController {
                      
                         $this->__redirect();
                     } else {
-                        $this->setFlash('Your account needed to be approve', 'alert alert-error login-message');
+                        $this->setFlash('Your account needed to be approve', 'alert alert-danger login-message');
                     }
                 } else {
-                    $this->setFlash('Invalid username and password', 'alert alert-error login-message');
+                    $this->setFlash('Invalid username and password', 'alert alert-danger login-message');
                 }
             }
         }
@@ -170,7 +170,7 @@ class UsersController extends AppController {
                 $this->redirect(array('action'=>'profile'));
                
             } else {
-                $this->setFlash(__('The Category could not be subnitted. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The Category could not be subnitted. Please, try again.', true), 'alert alert-danger');
                 $this->redirect(array('action'=>'profile'));
             }
         }
@@ -196,7 +196,7 @@ class UsersController extends AppController {
                 $this->redirect(array('action'=>'profile'));
                
             } else {
-                $this->setFlash(__('The course could not be subnitted. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The course could not be subnitted. Please, try again.', true), 'alert alert-danger');
                 $this->redirect(array('action'=>'profile'));
             }
         }
@@ -254,7 +254,7 @@ class UsersController extends AppController {
 		if($this->uploadFile()){
                    return true; 
                 }		else{
-                    $this->setFlash('error uploading image', 'alert alert-error', 'register');
+                    $this->setFlash('error uploading image', 'alert alert-danger', 'register');
                     return false;
                 }
                 $salt = substr(md5(uniqid(mt_rand(), true)), 0, 3);
@@ -274,7 +274,7 @@ class UsersController extends AppController {
                 }
                
             } else {
-                $this->setFlash(__('The user could not be saved. Please, try again.', true), 'alert alert-error', 'register');
+                $this->setFlash(__('The user could not be saved. Please, try again.', true), 'alert alert-danger', 'register');
             }
         }
         $this->loadModel('Faculty');
@@ -330,7 +330,7 @@ class UsersController extends AppController {
         }
         else
         {
-            $this->setFlash(__("Sorry, can not find that user", true), "alert alert-error");     
+            $this->setFlash(__("Sorry, can not find that user", true), "alert alert-danger");     
             $this->redirect(array('controller'=>'users','action' => 'index'));
          }
     }

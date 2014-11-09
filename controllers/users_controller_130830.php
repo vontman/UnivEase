@@ -55,10 +55,10 @@ class UsersController extends AppController {
                         $this->Session->write('user', $user['User']);
                         $this->__redirect();
                     } else {
-                        $this->setFlash('Your account needed to be approve', 'alert alert-error login-message');
+                        $this->setFlash('Your account needed to be approve', 'alert alert-danger login-message');
                     }
                 } else {
-                    $this->setFlash('Invalid username and password', 'alert alert-error login-message');
+                    $this->setFlash('Invalid username and password', 'alert alert-danger login-message');
                 }
             }
         }
@@ -87,7 +87,7 @@ class UsersController extends AppController {
                 $this->setFlash(__("Your profile has been saved successfully", true), "alert alert-success");
                 $this->redirect(array('controller' => 'users', 'action' => 'profile'));
             } else {
-                $this->setFlash(__("You profile could not be saved", true), 'alert alert-error');
+                $this->setFlash(__("You profile could not be saved", true), 'alert alert-danger');
             }
         } else {
 
@@ -121,14 +121,14 @@ class UsersController extends AppController {
                 $this->setFlash(__('The user has been saved', true), 'alert alert-success');
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->setFlash(__('The user could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The user could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
     }
 
     function admin_edit($id = null) {
         if (!$id && empty($this->data)) {
-            $this->setFlash(__('Invalid user', true), 'alert alert-error');
+            $this->setFlash(__('Invalid user', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         if (!empty($this->data)) {
@@ -136,7 +136,7 @@ class UsersController extends AppController {
                 $this->setFlash(__('The user has been saved', true), 'alert alert-success');
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->setFlash(__('The user could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The user could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
         if (empty($this->data)) {
@@ -149,7 +149,7 @@ class UsersController extends AppController {
 
     function admin_delete($id = null) {
         if (!$id) {
-            $this->setFlash(__('Invalid id for user', true), 'alert alert-error');
+            $this->setFlash(__('Invalid id for user', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
 
@@ -181,7 +181,7 @@ class UsersController extends AppController {
             $this->setFlash(__('User deleted', true), 'alert alert-success');
             $this->redirect($this->referer());
         }
-        $this->setFlash(__('User was not deleted', true), 'alert alert-error');
+        $this->setFlash(__('User was not deleted', true), 'alert alert-danger');
         $this->redirect(array('action' => 'index'));
     }
 
@@ -193,7 +193,7 @@ class UsersController extends AppController {
             if ($this->User->deleteAll(array('User.id' => $ids))) {
                 $this->setFlash(__('User deleted alert alert-successfully', true), 'alert alert-success');
             } else {
-                $this->setFlash(__('User can not be deleted', true), 'alert alert-error');
+                $this->setFlash(__('User can not be deleted', true), 'alert alert-danger');
             }
         }
         $this->redirect(array('action' => 'index'));
@@ -228,7 +228,7 @@ class UsersController extends AppController {
                 $counter = 0;
                 foreach ($data_array as $line) {
 //                    if ($counter == 0 && !$this->User->CSV_titles($line)) {
-//                        $this->setFlash("There is an error in the schema", 'alert alert-error');
+//                        $this->setFlash("There is an error in the schema", 'alert alert-danger');
 //                        break;
 //                    }
 //                    if ($counter > 0) {
@@ -256,7 +256,7 @@ class UsersController extends AppController {
                 $this->set(compact('count', 'Errors', 'failed', 'failedCode', 'processed'));
                 fclose($fh);
             } else {
-                $this->setFlash(__('Error uploading file', true), 'alert alert-error');
+                $this->setFlash(__('Error uploading file', true), 'alert alert-danger');
             }
             $this->data = array();
         }
@@ -351,7 +351,7 @@ class UsersController extends AppController {
                 }
                
             } else {
-                $this->setFlash(__('The user could not be saved. Please, try again.', true), 'alert alert-error', 'register');
+                $this->setFlash(__('The user could not be saved. Please, try again.', true), 'alert alert-danger', 'register');
             }
         }
         
@@ -360,7 +360,7 @@ class UsersController extends AppController {
     function confirm($confirm_code = false) {
 
         if (!$confirm_code) {
-            $this->setFlash('Invalid security code', 'alert alert-error');
+            $this->setFlash('Invalid security code', 'alert alert-danger');
             $this->redirect('/');
         }
 
@@ -369,7 +369,7 @@ class UsersController extends AppController {
         $email = $seeds[1];
         $user = $this->User->read(null, $id);
         if ($user['User']['email'] != $email) {
-            $this->setFlash('Invalid security code', 'alert alert-error', 'register');
+            $this->setFlash('Invalid security code', 'alert alert-danger', 'register');
             $this->redirect('/');
         } else {
             $this->User->create();
@@ -403,7 +403,7 @@ class UsersController extends AppController {
 
                 $this->redirect("/");
             } else {
-                $this->setFlash(__('Could not reset your password', true), 'alert alert-error', 'forget');
+                $this->setFlash(__('Could not reset your password', true), 'alert alert-danger', 'forget');
             }
         }
 
@@ -455,7 +455,7 @@ class UsersController extends AppController {
                     $this->setFlash(__("Your new password has been sent to your email address", true), "alert alert-success", 'forget');
                     $this->redirect('/#toforget');
                 } else {
-                    $this->setFlash(__("Failed to send your new password. Please try again", true), "alert alert-error", 'forget');
+                    $this->setFlash(__("Failed to send your new password. Please try again", true), "alert alert-danger", 'forget');
                 }
             } else {
                 $this->setFlash(__('Wrong Data', true));

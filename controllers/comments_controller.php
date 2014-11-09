@@ -64,7 +64,7 @@ class CommentsController extends AppController {
                     $this->redirect(array('controller' => 'posts', 'action' => 'view', $post['Post']['id'], $post['Post']['permalink']));
                 }
             } else {
-                $this->setFlash(__('The comment could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The comment could not be saved. Please, try again.', true), 'alert alert-danger');
                 $this->redirect(array('controller' => 'posts', 'action' => 'view',$post['Post']['id'], $post['Post']['permalink']));
             }
         }
@@ -82,7 +82,7 @@ class CommentsController extends AppController {
                     $this->redirect(array('controller' => 'posts', 'action' => 'view', $post['Post']['id'], $post['Post']['permalink']));
                 }
             } else {
-                $this->setFlash(__('The comment could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The comment could not be saved. Please, try again.', true), 'alert alert-danger');
                 $this->redirect(array('controller' => 'posts', 'action' => 'view',$post['Post']['id'], $post['Post']['permalink']));
             }
         }
@@ -100,7 +100,7 @@ class CommentsController extends AppController {
                 $this->setFlash(__('The comment has been saved', true), 'alert alert-success');
                 $this->redirect(array('action' => 'index', $comment['Post']['id']));
             } else {
-                $this->setFlash(__('The comment could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The comment could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
         if (empty($this->data)) {

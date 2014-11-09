@@ -4,7 +4,7 @@
             <legend><?php __('Add Upload'); ?></legend>                       
             <?php echo $this->Form->input("name",array('required'));
             echo $this->Form->input("File",array('type'=>'file','id'=>'file_upload','required'));
-            echo $this->Form->input('group_id',array('type'=>'hidden','value'=>0));
+            echo $this->Form->input('group_id',array('type'=>'hidden','value'=>$group_id));
             echo $this->Form->input('folder_id',array('type'=>'hidden','value'=>0));
         echo $this->Form->end("Upload");?>
           <br>      <br>        
@@ -35,12 +35,12 @@
                       });
                       $('#UploadName').val(files[0]['name']);
                   });
+                  var group_id=$('#UploadGroupId').val();
                   var add_folder_toggle=false;
                   var counter=0;
                   var prev_folder=[0];
                   var selected_folder=0;
-//                  var newfolder='<li id="add_folder" style="display:none; ">New Folder</li>';
-                  var url="<?php echo Router::url(array('controller'=>'uploads','action'=>'uploads_ajax')); ?>/";
+                  var url="<?php echo Router::url(array('controller'=>'uploads','action'=>'uploads_ajax',$group_id)); ?>/";
                   var last_url;
                   var type;
                   function load_uploads(selected_url){
@@ -52,24 +52,27 @@
                             uploads_type:type},
                             function(data){
                                 console.log(selected_url);
-                                $(data).appendTo('.uploads_view ul').slideDown(100);
+                                $(data).appendTo('.uploads_view ul').slideDown(100,function(){if($('#flashMessage').length){
+                                        setTimeout(function(){$('#flashMessage').slideUp(1000);},3000);
+                                    }
+                                });
                             }
                         );
                   }
                   $('#uploadsTab a').click(function(){
                       type=$(this).attr('href');
-                      load_uploads(url+type+'/0/0/');
+                      load_uploads(url+type+'/0/');
                   });
                   $('.uploads_view ul').delegate('.folder','click',function(){
                       counter++;
                       prev_folder[counter]=selected_folder;
                       selected_folder=$(this).attr('folder_id');
-                      load_uploads(url+type+'/0/'+selected_folder);
+                      load_uploads(url+type+'/'+selected_folder);
                   });
                   $('.uploads_view ul').delegate('#back_folder','click',function(){
                       counter--;
                       selected_folder=$(this).attr('folder_id');
-                      load_uploads(url+type+'/0/'+selected_folder);
+                      load_uploads(url+type+'/'+selected_folder);
                   });
                   $('.uploads_view').click(function(){
                     setTimeout(function(){
@@ -90,13 +93,11 @@
                   $('.uploads_view ul').delegate('#add_folder_input','keypress',function(key){
                       if(key.which==13){
                           var name=$(this).val();
-                          $.post("<?php echo Router::url(array('controller'=>'uploads','action'=>'add_folder'))?>/"+name+'/0/'+selected_folder,
+                          $.post("<?php echo Router::url(array('controller'=>'uploads','action'=>'add_folder',$group_id))?>/"+name+'/'+selected_folder,
                           {name:name},
-                          function(data){
-                              if(data){
-                                  setTimeout(function(){add_folder_toggle=false;},100);
-                                  load_uploads();
-                                }
+                          function(){
+                                setTimeout(function(){add_folder_toggle=false;},100);
+                                load_uploads();
                             });
                         }
                   });

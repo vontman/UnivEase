@@ -217,13 +217,13 @@ class QuestionsController extends AppController {
                     //$this->redirect(array('action' => 'index', $exam_id));
                     $this->redirect(array('action' => 'index',$course_id));
                 } else {
-                    $this->setFlash(__('The question could not be saved. Please, try again.', true), 'alert alert-error');
+                    $this->setFlash(__('The question could not be saved. Please, try again.', true), 'alert alert-danger');
                 }
             } else {
                 if (isset($error_message))
-                    $this->setFlash($error_message, 'alert alert-error');
+                    $this->setFlash($error_message, 'alert alert-danger');
                 else
-                    $this->setFlash(__('Please complete required fields, try again.', true), 'alert alert-error');
+                    $this->setFlash(__('Please complete required fields, try again.', true), 'alert alert-danger');
             }
 
             
@@ -264,7 +264,7 @@ class QuestionsController extends AppController {
         //$exam = $this->Question->Exam->findById($exam_id);
         /*
           if (!$exam) {
-          $this->setFlash(__('Exam not found', true), 'alert alert-error');
+          $this->setFlash(__('Exam not found', true), 'alert alert-danger');
           $this->redirect(array('controller' => 'users', 'action' => 'dashboard'));
           }
           $this->get_course($exam["Exam"]["course_id"]);
@@ -434,13 +434,13 @@ class QuestionsController extends AppController {
                     $this->setFlash(__('The question has been saved', true), 'alert alert-success');
                     $this->redirect(array('action' => 'index', $question["Question"]["course_id"]));
                 } else {
-                    $this->setFlash(__('The question could not be saved. Please, try again.', true), 'alert alert-error');
+                    $this->setFlash(__('The question could not be saved. Please, try again.', true), 'alert alert-danger');
                 }
             } else {
                 if (isset($error_message))
-                    $this->setFlash($error_message, 'alert alert-error');
+                    $this->setFlash($error_message, 'alert alert-danger');
                 else
-                    $this->setFlash(__('Please complete required fields, try again.', true), 'alert alert-error');
+                    $this->setFlash(__('Please complete required fields, try again.', true), 'alert alert-danger');
             
             }
  
@@ -543,7 +543,7 @@ class QuestionsController extends AppController {
             if ($this->Question->deleteAll(array('Question.id' => $ids))) {
                 $this->setFlash('Page deleted alert alert-successfully', 'alert alert-success');
             } else {
-                $this->setFlash('Page can not be deleted', 'alert alert-error');
+                $this->setFlash('Page can not be deleted', 'alert alert-danger');
             }
         }
         $this->redirect(array('action' => 'index'));
@@ -555,7 +555,7 @@ class QuestionsController extends AppController {
             if ($this->Question->deleteAll(array('Question.id' => $ids))) {
                 $this->setFlash('Page deleted alert alert-successfully', 'alert alert-success');
             } else {
-                $this->setFlash('Page can not be deleted', 'alert alert-error');
+                $this->setFlash('Page can not be deleted', 'alert alert-danger');
             }
         }
         $this->redirect(array('action' => 'index'));
@@ -584,7 +584,7 @@ class QuestionsController extends AppController {
 
           $exam = $this->Question->Exam->findById($course_id);
           if (!$exam) {
-          $this->setFlash(__('Exam not found', true), 'alert alert-error');
+          $this->setFlash(__('Exam not found', true), 'alert alert-danger');
           $this->redirect(array('controller' => 'users', 'action' => 'dashboard'));
           }
           $this->get_course($exam["Exam"]["course_id"]);
@@ -692,13 +692,13 @@ class QuestionsController extends AppController {
                     //$this->redirect(array('action' => 'index', $exam_id));
                     $this->redirect(array('action' => 'quiz_question_index',$course_id,'?'=>array('level'=>$_GET["level"])));
                 } else {
-                    $this->setFlash(__('The question could not be saved. Please, try again.', true), 'alert alert-error');
+                    $this->setFlash(__('The question could not be saved. Please, try again.', true), 'alert alert-danger');
                 }
             } else {
                 if (isset($error_message))
-                    $this->setFlash($error_message, 'alert alert-error');
+                    $this->setFlash($error_message, 'alert alert-danger');
                 else
-                    $this->setFlash(__('Please complete required fields, try again.', true), 'alert alert-error');
+                    $this->setFlash(__('Please complete required fields, try again.', true), 'alert alert-danger');
             }
 
             //</editor-fold>

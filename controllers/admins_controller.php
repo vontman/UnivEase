@@ -31,7 +31,7 @@ class AdminsController extends AppController {
                     $this->Session->write('admin', $admin);
                     $this->__redirect();
                 } else {
-                    $this->setFlash('Invalid username and password', 'alert alert-error login-message');
+                    $this->setFlash('Invalid username and password', 'alert alert-danger login-message');
                 }
             }
         }
@@ -63,7 +63,7 @@ class AdminsController extends AppController {
                 $this->setFlash(__('The Admin has been saved', true), 'alert alert-success');
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->setFlash(__('The Admin could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The Admin could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
     }
@@ -76,14 +76,14 @@ class AdminsController extends AppController {
                 $this->setFlash(__('The Admin has been saved', true), 'alert  alert-success');
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->setFlash(__('The Admin could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The Admin could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
     }
 
     function admin_edit($id = null) {
         if (!$id && empty($this->data)) {
-            $this->setFlash(__('Invalid Admin', true), 'alert alert-error');
+            $this->setFlash(__('Invalid Admin', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         if (!empty($this->data)) {
@@ -91,7 +91,7 @@ class AdminsController extends AppController {
                 $this->setFlash(__('The Admin has been saved', true), 'alert alert-success');
                 $this->redirect(array('action' => 'index'));
             } else {
-                $this->setFlash(__('The Admin could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The Admin could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
         if (empty($this->data)) {
@@ -104,14 +104,14 @@ class AdminsController extends AppController {
 
     function admin_delete($id = null) {
         if (!$id) {
-            $this->setFlash(__('Invalid id for Admin', true), 'alert alert-error');
+            $this->setFlash(__('Invalid id for Admin', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         if ($this->Admin->delete($id)) {
             $this->setFlash(__('Admin deleted', true), 'alert alert-success');
             $this->redirect(array('action' => 'index'));
         }
-        $this->setFlash(__('The Admin could not be deleted. Please, try again.', true), 'alert alert-error');
+        $this->setFlash(__('The Admin could not be deleted. Please, try again.', true), 'alert alert-danger');
         $this->redirect(array('action' => 'index'));
     }
 
@@ -122,7 +122,7 @@ class AdminsController extends AppController {
             if ($this->Admin->deleteAll(array('Admin.id' => $ids))) {
                 $this->setFlash('Admin deleted alert alert-successfully', 'alert alert-success');
             } else {
-                $this->setFlash('Admin can not be deleted', 'alert alert-error');
+                $this->setFlash('Admin can not be deleted', 'alert alert-danger');
             }
         }
         $this->redirect(array('action' => 'index'));
@@ -141,7 +141,7 @@ class AdminsController extends AppController {
                 $this->setFlash(__("Your profile has been saved successfully", true), "alert alert-success");
                 $this->redirect(array('controller' => 'admins', 'action' => 'profile'));
             } else {
-                $this->setFlash(__("You profile could not be saved", true), 'alert alert-error');
+                $this->setFlash(__("You profile could not be saved", true), 'alert alert-danger');
             }
         } else {
             unset($admin['password']);

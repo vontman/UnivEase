@@ -54,7 +54,7 @@ class NotesController extends AppController {
                         
                     } else {
                         $error = true;
-                        $this->setFlash(__('The message could not be saved. Please, try again.', true), 'alert alert-error');
+                        $this->setFlash(__('The message could not be saved. Please, try again.', true), 'alert alert-danger');
                        
                     }
                 
@@ -96,7 +96,7 @@ class NotesController extends AppController {
                         $this->setFlash(__('The message has been sent', true), 'alert alert-success');
                     } else {
                         $error = true;
-                        $this->setFlash(__('The message could not be saved. Please, try again.', true), 'alert alert-error');
+                        $this->setFlash(__('The message could not be saved. Please, try again.', true), 'alert alert-danger');
                         break;
                     }
                 }
@@ -118,7 +118,7 @@ class NotesController extends AppController {
 
     function reply($id = false) {
         if (!$id && empty($this->data)) {
-            $this->setFlash(__('Invalid id for message', true), 'alert alert-error');
+            $this->setFlash(__('Invalid id for message', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         $user = $this->is_user();
@@ -134,7 +134,7 @@ class NotesController extends AppController {
                 $this->setFlash(__('The message has been sent', true), 'alert alert-success');
                 $this->redirect(array('action' => 'index', '#' => 'sent'));
             } else {
-                $this->setFlash(__('The message could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The message could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
         $this->set('message', $message);
@@ -144,14 +144,14 @@ class NotesController extends AppController {
 
     function delete($id = null) {
         if (!$id) {
-            $this->setFlash(__('Invalid id for message', true), 'alert alert-error');
+            $this->setFlash(__('Invalid id for message', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         if ($this->Note->delete($id)) {
             $this->setFlash(__('Note deleted', true), 'alert alert-success');
             $this->redirect(array('action' => 'index'));
         }
-        $this->setFlash(__('Note was not deleted', true), 'alert alert-error');
+        $this->setFlash(__('Note was not deleted', true), 'alert alert-danger');
         $this->redirect(array('action' => 'index'));
     }
 

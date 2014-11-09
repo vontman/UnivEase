@@ -95,7 +95,7 @@ class CoursesController extends AppController {
                 $this->setFlash(__('The course has been saved', true), 'alert alert-success');
                 $this->redirect(array('controller' => 'course_users', 'action' => 'index', $id));
             } else {
-                $this->setFlash(__('The course could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The course could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
         if (empty($this->data)) {
@@ -111,7 +111,7 @@ class CoursesController extends AppController {
 
     function admin_edit($id = null) {
         if (!$id && empty($this->data)) {
-            $this->setFlash(__('Invalid course', true), 'alert alert-error');
+            $this->setFlash(__('Invalid course', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
 
@@ -127,7 +127,7 @@ class CoursesController extends AppController {
                 $this->setFlash(__('The course has been saved', true), 'alert alert-success');
                 $this->redirect(array('controller' => 'categories', 'action' => 'view', $this->data['Course']['category_id']));
             } else {
-                $this->setFlash(__('The course could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The course could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
         if (empty($this->data)) {
@@ -143,7 +143,7 @@ class CoursesController extends AppController {
     function admin_delete($id = null) {
 
         if (!$id) {
-            $this->setFlash(__('Invalid id for course', true), 'alert alert-error');
+            $this->setFlash(__('Invalid id for course', true), 'alert alert-danger');
             $this->redirect(array('action' => 'index'));
         }
         $course = $this->Course->read(null, $id);
@@ -180,7 +180,7 @@ class CoursesController extends AppController {
             $this->setFlash(__('Course deleted', true), 'alert alert-success');
             $this->redirect(array('controller' => 'categories', 'action' => 'view', $course['Course']['category_id']));
         }
-        $this->setFlash(__('Course was not deleted', true), 'alert alert-error');
+        $this->setFlash(__('Course was not deleted', true), 'alert alert-danger');
         $this->redirect(array('action' => 'index'));
     }
 
@@ -191,7 +191,7 @@ class CoursesController extends AppController {
             if ($this->Course->deleteall(array('Course.id' => $ids))) {
                 $this->setFlash(__('Course deleted alert alert-successfully', true), 'alert alert-success');
             } else {
-                $this->setFlash(__('Course can not be deleted', true), 'alert alert-error');
+                $this->setFlash(__('Course can not be deleted', true), 'alert alert-danger');
             }
         }
         $this->redirect($this->referer());
@@ -410,7 +410,7 @@ class CoursesController extends AppController {
                 $this->setFlash(__('The course has been saved', true), 'alert alert-success');
                 $this->redirect(array('action' => 'view', $this->data['Course']['id']));
             } else {
-                $this->setFlash(__('The course could not be saved. Please, try again.', true), 'alert alert-error');
+                $this->setFlash(__('The course could not be saved. Please, try again.', true), 'alert alert-danger');
             }
         }
         if (empty($this->data)) {

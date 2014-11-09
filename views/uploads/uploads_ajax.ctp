@@ -1,5 +1,6 @@
 
 <?php
+        echo $session->flash();
         echo '<li id="add_folder" style="display:none; ">'.$this->Html->image('folder_icon.png',array('width'=>'25px','height'=>'25px')).'Add New Folder</li>'; 
         if($folder_id!=0){
             echo '<li folder_id="'.$back_id.'" id="back_folder" style="display:none; ">'.$this->Html->image('folder_icon.png',array('width'=>'25px','height'=>'25px')).'back ...</li>';
