@@ -1,4 +1,4 @@
- .wrapper{
+/* .wrapper{
       
      
 min-height: 50px;
@@ -103,8 +103,46 @@ border-bottom-right-radius: 25px;
         background: rgba(68, 174, 176, 0.2);
 border-radius: 26%;
 width: auto;
-/* padding: 5px; */
+
 margin: 0 14px 7px 0;   
+     }*/
+     .action{
+         float:right;
+         margin-right: 5px;
+     }
+     .like-action{
+         float:right;
+         color: rgb(37, 156, 208);
+cursor: pointer;
+margin-left: 10px;
+
+     }
+     .do-comment{
+         color: rgb(37, 156, 208);
+cursor: pointer;
+text-decoration: underline;
+         float:right;
+         margin-right:5px;
+     }
+     .comment{
+         float: right;
+margin-bottom: 2px;
+margin-top: -6px;
+margin-right: 6px;
+color: rgb(37, 156, 208);
+cursor: pointer;
+     }
+     .comment-action{
+         float: right;
+color: red;
+cursor: pointer;
+margin: 7px;
+     }
+     .bookmark{
+         float: right;
+cursor: pointer;
+margin-right: 16px;
+margin-top: -20px;
      }
     
   

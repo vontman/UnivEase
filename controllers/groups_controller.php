@@ -25,7 +25,7 @@ class GroupsController extends AppController {
             $check=$this->CourseUser->find('first',array('fields'=>'CourseUser.id','conditions'=>array('CourseUser.user_id'=>$users['User']['id'],'CourseUser.id'=>$id)));
 //            $check=$this->GroupUser->find('first',array('fields'=>'GroupUser.id','conditions'=>array('GroupUser.user_id'=>$users['User']['id'],'GroupUser.group_id'=>$id)));
             if(!$check){
-                $this->setFlash(__("u aren't registered in this group", true), 'alert alert-danger');
+                $this->setFlash(__("You aren't registered in this group", true), 'alert alert-danger');
                 $this->redirect('/');
             }
          }

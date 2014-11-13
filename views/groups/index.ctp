@@ -37,6 +37,8 @@
             var trgt=$(this).attr('href');
             if(trgt=='#uploads'){
                 $(trgt).load("<?php echo Router::url(array('controller' => 'uploads','action'=>'index',$id)) ;?>/");
+            }else if(trgt=='#view_posts'){
+                $(trgt).load("<?php echo Router::url(array('controller'=>'posts','action'=>'index',$id)); ?>");
             }else{
                 $(trgt).load("<?php echo Router::url(array('controller' => 'groups')) ;?>/"+trgt.substring(1)+"/<?php echo $id;?>");
             }
